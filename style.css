@@ -254,3 +254,9 @@ nav .footer-contacts li {
   width: 20px;
   height: 20px;
 }
+
+header, footer {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+}
