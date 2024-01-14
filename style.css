@@ -98,6 +98,11 @@ nav a {
   text-decoration: none;
   color: #000000;
   font-size: 14px;
+  font-weight: normal;
+}
+
+nav li.active a {
+  color: #3AA8C1;
 }
 
 .intro {
@@ -110,9 +115,6 @@ nav a {
 .intro-content {
   width: 40%;
   background-color: #E6DACE;
-  /* display: flex;
-  width: 100%;
-  background: linear-gradient(to right, #E6DACE 40%, #FFFFFF 40%); */
 }
 
 .intro::after {
@@ -167,6 +169,7 @@ nav a {
 
 h5 {
   font-family: 'Nunito', sans-serif;
+  font-weight: normal;
   font-size: 25px;
   margin: 0;
 }
@@ -210,4 +213,44 @@ button {
 
 .projects-button:hover {
   background-color: #006D6F;
+}
+
+footer {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 20px;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.copyright {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.footer-content {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav .footer-contacts li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  margin-left: 100px;
+}
+
+.contact-info {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
 }
