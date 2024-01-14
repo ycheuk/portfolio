@@ -192,6 +192,7 @@ button {
   margin: 10px 10px;
   font-size: 14px;
   font-family: 'Nunito', sans-serif;
+  font-weight: bold;
   cursor: pointer;
   border: none;
   transition: background-color 0.3s;
