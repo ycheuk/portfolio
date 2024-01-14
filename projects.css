@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+header {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, h2 {
+  display: inline-block;
+  margin: 0;
+  color: black;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+nav li.active a {
+  color: #3AA8C1;
+}
+
+footer {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 20px;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.copyright {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.footer-content {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav .footer-contacts li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.contact-info {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+header, footer {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+}
+
+.portfolio {
+  background-color: #E6DACE;
+  margin-top: 100px;
+  height: 700px;
+}
+
+.portfolio-content {
+  padding: 20px; /* Add padding to the content if needed */
+}
+
+h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.reed-senate-website {
+  width: 751px;
+  height: 404px;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.reed-senate-website-bio {
+  width: 55%;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+}
+
+.test {
+  width: 20%;
+  height: 10%;
+  background-color: #EEA1CD;
+  margin-top: 50px;
+}
+
+.reed-senate-website-title {
+  width: 100%;
+  display: flex;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px; /* Adjust the margin as needed */
+}
+
+h6 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #EEA1CD;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+h4 {
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.reed-senate-website-picture {
+  right: 0;
+  height: 100%;
+  width: 45%;
+  background-image: url('reed-senate-website.png');
+  background-size: cover; /* Adjust as needed */
+  background-position: center;
+  margin-left: 10px;
+}
