@@ -43,7 +43,7 @@ h3 {
   font-size: 27px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 h3::after {
@@ -174,4 +174,40 @@ h5 {
 .bio {
   font-family: 'Nunito', sans-serif;
   font-size: 17px;
+}
+
+.buttons-container {
+  display: flex;
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+button {
+  width: 120px;
+  height: 35px;
+  border-radius: 20px;
+  margin: 10px 10px;
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.resume-button {
+  background-color: #EEA1CD;
+  color: #FFFFFF;
+}
+
+.resume-button:hover {
+  background-color: #9F6184;
+}
+
+.projects-button {
+  background-color: #3AA8C1;
+  color: #FFFFFF;
+}
+
+.projects-button:hover {
+  background-color: #006D6F;
 }
