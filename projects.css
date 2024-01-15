@@ -132,7 +132,8 @@ header, footer {
 .portfolio {
   background-color: #E6DACE;
   margin-top: 100px;
-  height: 3000px;
+  height: fit-content;
+  padding-bottom: 50px
 }
 
 .portfolio-content {
@@ -144,15 +145,6 @@ h3 {
   font-size: 35px;
   font-weight: bold;
   text-align: center;
-}
-
-.reed-senate-website {
-  width: 750px;
-  height: fit-content;
-  background-color: #FFFFFF;
-  margin: auto;
-  display: flex;
-  margin-top: 50px;
 }
 
 .bio {
@@ -204,100 +196,46 @@ h4 {
 }
 
 .reed-senate-website-picture {
-  right: 0;
-  width: 45%;
   background-image: url('reed-senate-website.png');
-  background-size: cover;
-  background-position: center;
-  margin-left: 10px;
-}
-
-.ascii-chronicles {
-  width: 750px;
-  height: fit-content;
-  background-color: #FFFFFF;
-  margin: auto;
-  display: flex;
-  margin-top: 50px;
 }
 
 .ascii-chronicles-picture {
-  right: 0;
-  width: 45%;
   background-image: url('ascii-chronicles.png');
-  background-size: cover;
-  background-position: center;
-  margin-left: 10px;
 }
 
-.brothers-buffet-website {
-  width: 750px;
-  height: fit-content;
-  background-color: #FFFFFF;
-  margin: auto;
-  display: flex;
-  margin-top: 50px;
+.skribblio-picture {
+  background-image: url('skribblio.png');
 }
 
 .brothers-buffet-website-picture {
-  right: 0;
-  width: 45%;
   background-image: url('brothers-buffet.png');
-  background-size: cover;
-  background-position: 30%;
-  margin-left: 10px;
-}
-
-.paideia {
-  width: 750px;
-  height: fit-content;
-  background-color: #FFFFFF;
-  margin: auto;
-  display: flex;
-  margin-top: 50px;
 }
 
 .paideia-picture {
-  right: 0;
-  width: 45%;
   background-image: url('paideia.png');
-  background-size: cover;
-  background-position: center;
-  margin-left: 10px;
-}
-
-.castle-suspense {
-  width: 750px;
-  height: fit-content;
-  background-color: #FFFFFF;
-  margin: auto;
-  display: flex;
-  margin-top: 50px;
 }
 
 .castle-suspense-picture {
+  background-image: url('castle-suspense.png');
+}
+
+.sclp-picture {
+  background-image: url('sclp.png');
+}
+
+.reed-senate-website-picture, .skribblio-picture, .ascii-chronicles-picture, .brothers-buffet-website-picture, .paideia-picture, .castle-suspense-picture, .sclp-picture {
   right: 0;
   width: 45%;
-  background-image: url('castle-suspense.png');
   background-size: cover;
   background-position: center;
   margin-left: 10px;
 }
 
-.sclp {
+.container {
   width: 750px;
   height: fit-content;
   background-color: #FFFFFF;
   margin: auto;
   display: flex;
   margin-top: 50px;
-}
-
-.sclp-picture {
-  right: 0;
-  width: 45%;
-  background-image: url('sclp.png');
-  background-size: cover; 
-  background-position: center;
-  margin-left: 10px;
 }
