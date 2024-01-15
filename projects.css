@@ -132,11 +132,11 @@ header, footer {
 .portfolio {
   background-color: #E6DACE;
   margin-top: 100px;
-  height: 700px;
+  height: 3000px;
 }
 
 .portfolio-content {
-  padding: 20px; /* Add padding to the content if needed */
+  padding: 20px;
 }
 
 h3 {
@@ -147,30 +147,29 @@ h3 {
 }
 
 .reed-senate-website {
-  width: 751px;
-  height: 404px;
+  width: 750px;
+  height: fit-content;
   background-color: #FFFFFF;
   margin: auto;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  margin-top: 50px;
 }
 
-.reed-senate-website-bio {
+.bio {
   width: 55%;
   height: 100%;
   background-color: #FFFFFF;
   display: flex;
 }
 
-.test {
-  width: 20%;
-  height: 10%;
+.decor {
+  width: 50px;
+  height: 45px;
   background-color: #EEA1CD;
   margin-top: 50px;
 }
 
-.reed-senate-website-title {
+.title {
   width: 100%;
   display: flex;
 }
@@ -178,7 +177,7 @@ h3 {
 .title-text {
   display: flex;
   flex-direction: column;
-  margin-left: 30px; /* Adjust the margin as needed */
+  margin-left: 30px;
 }
 
 h6 {
@@ -192,21 +191,113 @@ h6 {
 h5 {
   font-size: 14px;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 3px;
 }
 
 h4 {
   font-size: 13px;
   font-weight: normal;
   margin-top: 10px;
+  margin-right: 30px;
+  line-height: 1.7;
+  margin-bottom: 50px
 }
 
 .reed-senate-website-picture {
   right: 0;
-  height: 100%;
   width: 45%;
   background-image: url('reed-senate-website.png');
-  background-size: cover; /* Adjust as needed */
+  background-size: cover;
+  background-position: center;
+  margin-left: 10px;
+}
+
+.ascii-chronicles {
+  width: 750px;
+  height: fit-content;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+}
+
+.ascii-chronicles-picture {
+  right: 0;
+  width: 45%;
+  background-image: url('ascii-chronicles.png');
+  background-size: cover;
+  background-position: center;
+  margin-left: 10px;
+}
+
+.brothers-buffet-website {
+  width: 750px;
+  height: fit-content;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+}
+
+.brothers-buffet-website-picture {
+  right: 0;
+  width: 45%;
+  background-image: url('brothers-buffet.png');
+  background-size: cover;
+  background-position: 30%;
+  margin-left: 10px;
+}
+
+.paideia {
+  width: 750px;
+  height: fit-content;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+}
+
+.paideia-picture {
+  right: 0;
+  width: 45%;
+  background-image: url('paideia.png');
+  background-size: cover;
+  background-position: center;
+  margin-left: 10px;
+}
+
+.castle-suspense {
+  width: 750px;
+  height: fit-content;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+}
+
+.castle-suspense-picture {
+  right: 0;
+  width: 45%;
+  background-image: url('castle-suspense.png');
+  background-size: cover;
+  background-position: center;
+  margin-left: 10px;
+}
+
+.sclp {
+  width: 750px;
+  height: fit-content;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+}
+
+.sclp-picture {
+  right: 0;
+  width: 45%;
+  background-image: url('sclp.png');
+  background-size: cover; 
   background-position: center;
   margin-left: 10px;
 }
