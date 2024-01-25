@@ -198,21 +198,21 @@ button {
   transition: background-color 0.3s;
 }
 
-.resume-button {
+.projects-button {
   background-color: #EEA1CD;
   color: #FFFFFF;
 }
 
-.resume-button:hover {
+.projects-button:hover {
   background-color: #9F6184;
 }
 
-.projects-button {
+.resume-button {
   background-color: #3AA8C1;
   color: #FFFFFF;
 }
 
-.projects-button:hover {
+.resume-button:hover {
   background-color: #006D6F;
 }
 

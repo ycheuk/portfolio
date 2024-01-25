@@ -229,6 +229,16 @@ h4 {
   background-size: cover;
   background-position: center;
   margin-left: 10px;
+  transition: filter 0.3s ease;
+}
+
+.reed-senate-website-picture:hover,
+.skribblio-picture:hover,
+.ascii-chronicles-picture:hover,
+.brothers-buffet-website-picture:hover,
+.paideia-picture:hover,
+.castle-suspense-picture:hover {
+  filter: brightness(70%);
 }
 
 .container {
