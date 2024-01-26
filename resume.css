@@ -194,7 +194,7 @@ h4 {
 }
 
 .container {
-  width: 750px;
+  width: 100%;
   height: fit-content;
   background-color: #FFFFFF;
   margin: auto;
@@ -205,7 +205,7 @@ h4 {
 }
 
 .education {
-  width: 750px;
+  width: 60%;
   margin: auto;
   height: fit-content;
   padding-bottom: 50px
@@ -272,14 +272,21 @@ button {
 }
 
 .experiences {
-  width: 750px;
+  width: 60%;
+  margin: auto;
+  height: fit-content;
+  padding-bottom: 50px
+}
+
+.technical-tool {
+  width: 60%;
   margin: auto;
   height: fit-content;
   padding-bottom: 50px
 }
 
 .skills-container {
-  width: 750px;
+  width: 100%;
   height: fit-content;
   background-color: #FFFFFF;
   margin: auto;
