@@ -197,6 +197,10 @@ h4 {
   margin-bottom: 50px
 }
 
+.hoyocreators-picture {
+    background-image: url('hoyocreators.png');
+}
+
 .reed-senate-website-picture {
   background-image: url('reed-senate-website.png');
 }
@@ -225,7 +229,7 @@ h4 {
   background-image: url('sclp.png');
 }
 
-.reed-senate-website-picture, .skribblio-picture, .ascii-chronicles-picture, .brothers-buffet-website-picture, .paideia-picture, .castle-suspense-picture, .sclp-picture {
+.hoyocreators-picture, .reed-senate-website-picture, .skribblio-picture, .ascii-chronicles-picture, .brothers-buffet-website-picture, .paideia-picture, .castle-suspense-picture, .sclp-picture {
   right: 0;
   width: 45%;
   background-size: cover;
@@ -234,6 +238,7 @@ h4 {
   transition: filter 0.3s ease;
 }
 
+.hoyocreators-picture:hover,
 .reed-senate-website-picture:hover,
 .skribblio-picture:hover,
 .ascii-chronicles-picture:hover,
