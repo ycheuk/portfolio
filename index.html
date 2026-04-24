@@ -43,7 +43,6 @@
             <img src="images/line_break_right.png" class="line-break-img" alt="" />
         </div>
 
-    <!-- ====== NOTABLE WORKS SHOWCASE ====== -->
         <div class="showcase">
             <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
                 <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
@@ -96,7 +95,6 @@
                 </div>
             </div>
         </div>
-        <!-- ====== END NOTABLE WORKS SHOWCASE ====== -->
 
         <a href="#about" class="work-down-arrow-link">
             <img src="images/down_arrow.png" alt="Scroll down" class="work-down-arrow" />
@@ -104,7 +102,6 @@
     </section>
 
     <script>
-        // ====== WORK DETAIL DATA ======
         const workData = {
             brothers_buffet_thumbnail: {
                 title: 'Local Chinese Dining Website',
@@ -163,9 +160,8 @@
 
         // Set default active thumbnail on load
         document.addEventListener('DOMContentLoaded', () => {
-            showWork('toury_thumbnail');   // ← calls full showWork instead of just adding class
+            showWork('toury_thumbnail');
         });
-        // ====== END WORK DETAIL DATA ======
 
         // Smooth scroll to #work
         document.querySelectorAll('a[href="#work"]').forEach(link => {
@@ -197,7 +193,7 @@
                 e.preventDefault();
                 const startY = window.scrollY;
                 const distance = -startY;  // scroll back to 0
-                const duration = 1800;     // ← same duration as the down scroll
+                const duration = 1800;
                 let startTime = null;
                 function ease(t) {
                     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
