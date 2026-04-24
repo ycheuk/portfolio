@@ -190,6 +190,28 @@
                 requestAnimationFrame(step);
             });
         });
+
+        // Smooth scroll to #top (up arrow in work section)
+        document.querySelectorAll('a[href="#top"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const startY = window.scrollY;
+                const distance = -startY;  // scroll back to 0
+                const duration = 1800;     // ← same duration as the down scroll
+                let startTime = null;
+                function ease(t) {
+                    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                }
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    window.scrollTo(0, startY + distance * ease(progress));
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        });
     </script>
 </body>
 </html>
