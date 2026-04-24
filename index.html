@@ -67,13 +67,13 @@
 
                 <!-- TITLE: bold project name + bullet + unbolded company -->
                 <p class="detail-title">
-                    <span id="detail-title-bold">Toury</span>
+                    <span id="detail-title-bold">Smart Tourism Mobile App</span>
                     <span class="detail-title-separator"> • </span>
-                    <span id="detail-company" class="detail-company">Company</span>
+                    <span id="detail-company" class="detail-company">TouryAI</span>
                 </p>
 
                 <!-- DESCRIPTION -->
-                <p class="detail-desc" id="detail-desc">[insert description]</p>
+                <p class="detail-desc" id="detail-desc">TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal. Born from a passion for exploration, TouryAI's mission is to make travel smarter, more engaging, and deeply personal, empowering explorers everywhere to see the world with fresh eyes.</p>
 
                 <!-- LABELS + SUCCESSES stacked together -->
                 <div class="detail-labels-row">
@@ -107,35 +107,34 @@
         // ====== WORK DETAIL DATA ======
         const workData = {
             brothers_buffet_thumbnail: {
-                title: 'Brothers Buffet',
-                company: 'Company',
+                title: 'Local Chinese Dining Website',
+                company: 'Brother\'s Buffet',
                 image: 'images/brothers_buffet.png',
-                desc: '[insert description]'
+                desc: 'Brother\'s Buffet is a family-owned American-Chinese buffet restaurant located in Pottsville, Pennsylvania. Known for its extensive selection of dishes, cozy atmosphere, and affordable prices, Brother\'s Buffet has been a local favorite for decades. \n\nThe website serves as a digital extension of the restaurant, showcasing its menu, business hours, address, pricing, and photo gallery to attract new customers and simplify communication.',
+                labels: ['images/label_1.png', 'images/label_3.png']   // ← set whichever labels apply
             },
             toury_thumbnail: {
-                title: 'Toury',
+                title: 'Smart Tourism Mobile App',
                 company: 'TouryAI',
                 image: 'images/toury.png',
-                desc: '[insert description]'
+                desc: 'TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal. Born from a passion for exploration, TouryAI\'s mission is to make travel smarter, more engaging, and deeply personal, empowering explorers everywhere to see the world with fresh eyes.',
+                labels: ['images/label_1.png', 'images/label_2.png', 'images/label_4.png']   // ← set whichever labels apply
             },
             joshua_trees_thumbnail: {
-                title: 'Joshua Trees',
-                company: 'Company',
+                title: 'Conservation Website (HeyJTree)',
+                company: 'Lancaster Museum of Art and History',
                 image: 'images/joshua_trees.png',
-                desc: '[insert description]'
+                desc: 'Hey JTree is an interactive website designed to offer connection between people and the Joshua trees of the Mojave Desert. The platform documents individual trees in Joshua Tree National Park and the Prime Desert Woodland Preserve, allowing visitors to explore tree profiles, share their experiences, and build a deeper relationship with nature.',
+                labels: ['images/label_2.png', 'images/label_3.png', 'images/label_4.png']   // ← set whichever labels apply
             },
             reed_college_thumbnail: {
                 title: 'Student Government UI Design',
                 company: 'Reed College',
                 image: 'images/reed_college.png',
-                desc: 'The Reed College Student Body Senate is the representative body of the Reed College Student Body for all its legislative, executive, and judicial purposes, and represents the interests of the Student Body to the Faculty, the Administration, and the Trustees of Reed College.'
+                desc: 'The Reed College Student Body Senate is the representative body of the Reed College Student Body for all its legislative, executive, and judicial purposes, and represents the interests of the Student Body to the Faculty, the Administration, and the Trustees of Reed College.',
+                labels: ['images/label_1.png', 'images/label_2.png', 'images/label_3.png', 'images/label_4.png']   // ← set whichever labels apply
             }
         };
-
-        // Set default active thumbnail on load
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('[onclick="showWork(\'toury_thumbnail\')"]').classList.add('active');
-        });
 
         function showWork(key) {
             const data = workData[key];
@@ -145,12 +144,27 @@
             document.getElementById('detail-company').textContent = data.company;
             document.getElementById('detail-desc').textContent = data.desc;
 
+            // Dynamically render only this project's labels
+            const labelsContainer = document.getElementById('detail-labels');
+            labelsContainer.innerHTML = '';
+            data.labels.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.classList.add('detail-label');
+                labelsContainer.appendChild(img);
+            });
+
             // Remove active from all, then set on clicked item
             document.querySelectorAll('.showcase-item').forEach(item => {
                 item.classList.remove('active');
             });
             document.querySelector(`[onclick="showWork('${key}')"]`).classList.add('active');
         }
+
+        // Set default active thumbnail on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showWork('toury_thumbnail');   // ← calls full showWork instead of just adding class
+        });
         // ====== END WORK DETAIL DATA ======
 
         // Smooth scroll to #work

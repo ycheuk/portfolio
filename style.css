@@ -255,6 +255,7 @@ body {
   line-height: 1.7;    /* ← adjust: line spacing within description */
   margin: 0;
   opacity: 0.7;        /* ← adjust: soften the description text */
+  white-space: pre-line;
 }
 
 /* ====== END WORK DETAIL PANEL ====== */
