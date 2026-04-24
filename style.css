@@ -1,0 +1,389 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F2EDE9;
+    overflow-x: hidden;
+}
+
+/* Container fills screen */
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Center image (headshot) */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    z-index: 2; /* sits on top */
+}
+
+/* Side images */
+.side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25vh;
+    z-index: 1;
+}
+
+/* Left image */
+.left {
+    left: 50%;
+    transform: translate(-140%, -50%);
+}
+
+/* Right image */
+.right {
+    left: 50%;
+    transform: translate(40%, -50%);
+}
+
+/* Down arrow */
+.down-arrow {
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6vmin;
+  height: auto;
+  z-index: 10;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+}
+
+/* Nav wrapper — fixed to top of screen */
+.header-nav {
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90vw;
+  z-index: 100;
+}
+
+/* Header bar image — fills the nav naturally */
+.header-bar {
+  display: block;
+  width: 110vh;
+  height: auto;
+}
+
+/* Items row — overlaid on top of the bar image */
+.nav-items {
+  position: absolute;
+  top: 5%;
+  left: 8.5vw;
+  transform: translateY(-5%);
+  display: flex;
+  align-items: center;
+  gap: 2.7vw;
+}
+
+/* Right nav items */
+.nav-items-right {
+  position: absolute;
+  top: 5%;
+  right: 8.5vw;
+  transform: translateY(-5%);
+  display: flex;
+  align-items: center;
+  gap: 2.7vw;
+}
+
+/* Heart icon — matches nav text height */
+.heart-icon {
+  height: 14px;
+  width: auto;
+}
+
+/* WORK / ABOUT links */
+.nav-link {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.05em;
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+/* Remove underline/style from arrow link wrapper */
+.down-arrow-link {
+  position: absolute;
+  bottom: 0vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+}
+
+/* Move down-arrow positioning to the link wrapper instead */
+.down-arrow {
+  width: 6vmin;
+  height: auto;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+/* Work section */
+.work-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #F2EDE9;
+  position: relative;   /* ADD THIS */
+}
+
+/* Work section arrows — anchored to work section */
+.work-up-arrow-link {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  z-index: 200;
+  display: flex;
+}
+
+.work-down-arrow-link {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+}
+
+.work-up-arrow,
+.work-down-arrow {
+  width: 6vmin;
+  height: auto;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+/* ====== SHOWCASE ====== */
+
+/* Showcase container — sits between the two arrows */
+.showcase {
+  position: absolute;
+  top: 15vh;
+  bottom: 55vh;
+  left: 35%;
+  right: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+/* Each work item */
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 200;
+  cursor: pointer;
+}
+
+/* Thumbnail size */
+.showcase-thumb {
+  width: 7vw;         /* ← thumbnail width — adjust freely (currently 15% of screen width) */
+  height: auto;
+  object-fit: cover;
+}
+
+/* ====== END SHOWCASE ====== */
+
+/* ====== WORK DETAIL PANEL ====== */
+
+.work-detail {
+  position: absolute;
+  top: 43vh;           /* ← was 35vh, pushed down to match */
+  bottom: 12vh;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4vw;
+}
+
+/* Enlarged image on the left */
+.detail-image {
+  width: 32vw;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 10px;                          /* ← rounded corners */
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15); /* ← light shadow */
+}
+
+/* Text block on the right */
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  align-self: flex-start;   /* ← top-aligns the text block */
+}
+
+.detail-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;     /* ← adjust: title font size */
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.detail-desc {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;     /* ← adjust: description font size */
+  letter-spacing: 0.02em;
+  line-height: 1.7;    /* ← adjust: line spacing within description */
+  margin: 0;
+  opacity: 0.7;        /* ← adjust: soften the description text */
+}
+
+/* ====== END WORK DETAIL PANEL ====== */
+
+/* ====== DETAIL TEXT PANEL ====== */
+
+/* Title line: bold name + bullet + company */
+.detail-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 24px;           /* ← adjust: title font size */
+  line-height: 1.2;
+}
+
+#detail-title-bold {
+  font-weight: 700;          /* bold project name */
+}
+
+.detail-title-separator {
+  font-weight: 400;
+}
+
+.detail-company {
+  font-weight: 400;          /* unbolded company */
+}
+
+/* Description */
+.detail-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;           /* ← adjust: description font size */
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+/* Labels + successes wrapper */
+.detail-labels-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label images row */
+.detail-labels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1vw;                  /* ← adjust: gap between label images */
+  margin-bottom: 15px;
+}
+
+/* Individual label image */
+.detail-label {
+  width: 7vw;                /* ← adjust: label image width (3% of screen) */
+  height: auto;
+}
+
+/* Successes row — sits on top of labels */
+.detail-successes {
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3vw;                  /* ← adjust: gap between success items */
+}
+
+/* Single success block */
+.success-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2vh;
+}
+
+/* "My Role" label — unbolded */
+.success-label {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;           /* ← adjust */
+  font-weight: 400;
+  margin-bottom: 5px;
+  opacity: 50%;
+}
+
+/* "UI Designer" value — bolded */
+.success-value {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;           /* ← adjust */
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ====== END DETAIL TEXT PANEL ====== */
+
+/* ====== NOTABLE WORKS TITLE ROW ====== */
+
+.showcase-header {
+  position: absolute;
+  top: 20vh;           /* ← adjust: how far down from top of work-section */
+  left: 10%;           /* ← adjust: matches work-detail left margin */
+  right: 10%;          /* ← adjust: matches work-detail right margin */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;            /* ← adjust: gap between line breaks and title text */
+}
+
+.showcase-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;     /* ← adjust: title font size */
+  letter-spacing: 0.40em;  /* ← 40% letter spacing */
+  white-space: nowrap;
+}
+
+.line-break-img {
+  height: 1vh;         /* ← adjust: height of the line break images */
+  width: auto;
+}
+
+/* ====== END NOTABLE WORKS TITLE ROW ====== */
+
+/* Line break between thumbnails and work detail */
+.section-line-break {
+  position: absolute;
+  top: 38vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 1vh;
+  object-fit: fill;
+}

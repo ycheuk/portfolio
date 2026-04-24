@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yik Yin Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+    <nav class="header-nav">
+        <img src="images/header_bar.png" alt="Header" class="header-bar" />
+        <div class="nav-items">
+            <img src="images/heart_symbol.png" alt="Heart" class="heart-icon" />
+            <a href="#work" class="nav-link">WORK</a>
+            <a href="#about" class="nav-link">ABOUT</a>
+        </div>
+        <div class="nav-items-right">
+            <a href="https://www.linkedin.com/in/ycheuk/" target="_blank" class="nav-link">LINKEDIN</a>
+            <a href="https://www.behance.net/ycheuk" target="_blank" class="nav-link">BEHANCE</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="images/yik.png" alt="Yik" class="side left">
+        <img src="images/headshot.png" alt="Headshot" class="center">
+        <img src="images/yin.png" alt="Yin" class="side right">
+
+        <a href="#work" class="down-arrow-link">
+            <img src="images/down_arrow.png" alt="Scroll down" class="down-arrow" />
+        </a>
+    </div>
+
+    <section id="work" class="work-section">
+        <a href="#top" class="work-up-arrow-link">
+            <img src="images/up_arrow.png" alt="Scroll up" class="work-up-arrow" />
+        </a>
+
+        <div class="showcase-header">
+            <img src="images/line_break_left.png" class="line-break-img" alt="" />
+            <span class="showcase-title">NOTABLE WORKS</span>
+            <img src="images/line_break_right.png" class="line-break-img" alt="" />
+        </div>
+
+    <!-- ====== NOTABLE WORKS SHOWCASE ====== -->
+        <div class="showcase">
+            <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
+                <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
+            </div>
+            <div class="showcase-item" onclick="showWork('toury_thumbnail')">
+                <img src="images/toury_thumbnail.png" alt="toury_thumbnail" class="showcase-thumb" />
+            </div>
+            <div class="showcase-item" onclick="showWork('joshua_trees_thumbnail')">
+                <img src="images/joshua_trees_thumbnail.png" alt="Joshua Trees" class="showcase-thumb" />
+            </div>
+            <div class="showcase-item" onclick="showWork('reed_college_thumbnail')">
+                <img src="images/reed_college_thumbnail.png" alt="Reed College" class="showcase-thumb" />
+            </div>
+        </div>
+
+        <img src="images/line_break.png" class="section-line-break" alt="" />
+
+        <div class="work-detail" id="work-detail">
+    <img src="images/toury.png" alt="Selected work" class="detail-image" id="detail-image" />
+    <div class="detail-text">
+
+        <!-- TITLE: bold project name + bullet + unbolded company -->
+        <p class="detail-title">
+            <span id="detail-title-bold">Toury</span>
+            <span class="detail-title-separator"> • </span>
+            <span id="detail-company" class="detail-company">Company</span>
+        </p>
+
+        <!-- DESCRIPTION -->
+        <p class="detail-desc" id="detail-desc">[insert description]</p>
+
+        <!-- LABELS + SUCCESSES stacked together -->
+        <div class="detail-labels-row">
+
+            <!-- Label images -->
+            <div class="detail-labels" id="detail-labels">
+                <img src="images/label_1.png" class="detail-label" />
+                <img src="images/label_2.png" class="detail-label" />
+                <img src="images/label_3.png" class="detail-label" />
+                <img src="images/label_4.png" class="detail-label" />
+            </div>
+
+            <!-- Successes overlaid on top of labels -->
+            <div class="detail-successes">
+                <div class="success-item">
+                    <p class="success-label">My Role</p>
+                    <p class="success-value">UI Designer</p>
+                </div>
+                <!-- ← duplicate .success-item blocks here for more successes -->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+        <!-- ====== END NOTABLE WORKS SHOWCASE ====== -->
+
+        <a href="#about" class="work-down-arrow-link">
+            <img src="images/down_arrow.png" alt="Scroll down" class="work-down-arrow" />
+        </a>
+    </section>
+
+    <script>
+        // ====== WORK DETAIL DATA ======
+        const workData = {
+    brothers_buffet_thumbnail: {
+        title: 'Brothers Buffet',
+        company: 'Company',
+        image: 'images/brothers_buffet.png',
+        desc: '[insert description]'
+    },
+    toury_thumbnail: {
+        title: 'Toury',
+        company: 'TouryAI',
+        image: 'images/toury.png',
+        desc: '[insert description]'
+    },
+    joshua_trees_thumbnail: {
+        title: 'Joshua Trees',
+        company: 'Company',
+        image: 'images/joshua_trees.png',
+        desc: '[insert description]'
+    },
+    reed_college_thumbnail: {
+        title: 'Student Government UI Design',
+        company: 'Reed College',
+        image: 'images/reed_college.png',
+        desc: 'The Reed College Student Body Senate is the representative body of the Reed College Student Body for all its legislative, executive, and judicial purposes, and represents the interests of the Student Body to the Faculty, the Administration, and the Trustees of Reed College.'
+    }
+};
+
+function showWork(key) {
+    const data = workData[key];
+    document.getElementById('detail-image').src = data.image;
+    document.getElementById('detail-image').alt = data.title;
+    document.getElementById('detail-title-bold').textContent = data.title;
+    document.getElementById('detail-company').textContent = data.company;
+    document.getElementById('detail-desc').textContent = data.desc;
+}
+        // ====== END WORK DETAIL DATA ======
+
+        // Smooth scroll to #work
+        document.querySelectorAll('a[href="#work"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.getElementById('work');
+                const targetY = target.getBoundingClientRect().top + window.scrollY;
+                const startY = window.scrollY;
+                const distance = targetY - startY;
+                const duration = 1800;
+                let startTime = null;
+                function ease(t) {
+                    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                }
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    window.scrollTo(0, startY + distance * ease(progress));
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        });
+    </script>
+</body>
+</html>
