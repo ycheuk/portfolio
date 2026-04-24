@@ -62,43 +62,40 @@
         <img src="images/line_break.png" class="section-line-break" alt="" />
 
         <div class="work-detail" id="work-detail">
-    <img src="images/toury.png" alt="Selected work" class="detail-image" id="detail-image" />
-    <div class="detail-text">
+            <img src="images/toury.png" alt="Selected work" class="detail-image" id="detail-image" />
+            <div class="detail-text">
 
-        <!-- TITLE: bold project name + bullet + unbolded company -->
-        <p class="detail-title">
-            <span id="detail-title-bold">Toury</span>
-            <span class="detail-title-separator"> • </span>
-            <span id="detail-company" class="detail-company">Company</span>
-        </p>
+                <!-- TITLE: bold project name + bullet + unbolded company -->
+                <p class="detail-title">
+                    <span id="detail-title-bold">Toury</span>
+                    <span class="detail-title-separator"> • </span>
+                    <span id="detail-company" class="detail-company">Company</span>
+                </p>
 
-        <!-- DESCRIPTION -->
-        <p class="detail-desc" id="detail-desc">[insert description]</p>
+                <!-- DESCRIPTION -->
+                <p class="detail-desc" id="detail-desc">[insert description]</p>
 
-        <!-- LABELS + SUCCESSES stacked together -->
-        <div class="detail-labels-row">
+                <!-- LABELS + SUCCESSES stacked together -->
+                <div class="detail-labels-row">
 
-            <!-- Label images -->
-            <div class="detail-labels" id="detail-labels">
-                <img src="images/label_1.png" class="detail-label" />
-                <img src="images/label_2.png" class="detail-label" />
-                <img src="images/label_3.png" class="detail-label" />
-                <img src="images/label_4.png" class="detail-label" />
-            </div>
+                    <!-- Label images -->
+                    <div class="detail-labels" id="detail-labels">
+                        <img src="images/label_1.png" class="detail-label" />
+                        <img src="images/label_2.png" class="detail-label" />
+                        <img src="images/label_3.png" class="detail-label" />
+                        <img src="images/label_4.png" class="detail-label" />
+                    </div>
 
-            <!-- Successes overlaid on top of labels -->
-            <div class="detail-successes">
-                <div class="success-item">
-                    <p class="success-label">My Role</p>
-                    <p class="success-value">UI Designer</p>
+                    <!-- Extra labels -->
+                    <div class="detail-successes">
+                        <div class="success-item">
+                            <p class="success-label">My Role</p>
+                            <p class="success-value">UI Designer</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- ← duplicate .success-item blocks here for more successes -->
             </div>
-
         </div>
-
-    </div>
-</div>
         <!-- ====== END NOTABLE WORKS SHOWCASE ====== -->
 
         <a href="#about" class="work-down-arrow-link">
@@ -109,40 +106,51 @@
     <script>
         // ====== WORK DETAIL DATA ======
         const workData = {
-    brothers_buffet_thumbnail: {
-        title: 'Brothers Buffet',
-        company: 'Company',
-        image: 'images/brothers_buffet.png',
-        desc: '[insert description]'
-    },
-    toury_thumbnail: {
-        title: 'Toury',
-        company: 'TouryAI',
-        image: 'images/toury.png',
-        desc: '[insert description]'
-    },
-    joshua_trees_thumbnail: {
-        title: 'Joshua Trees',
-        company: 'Company',
-        image: 'images/joshua_trees.png',
-        desc: '[insert description]'
-    },
-    reed_college_thumbnail: {
-        title: 'Student Government UI Design',
-        company: 'Reed College',
-        image: 'images/reed_college.png',
-        desc: 'The Reed College Student Body Senate is the representative body of the Reed College Student Body for all its legislative, executive, and judicial purposes, and represents the interests of the Student Body to the Faculty, the Administration, and the Trustees of Reed College.'
-    }
-};
+            brothers_buffet_thumbnail: {
+                title: 'Brothers Buffet',
+                company: 'Company',
+                image: 'images/brothers_buffet.png',
+                desc: '[insert description]'
+            },
+            toury_thumbnail: {
+                title: 'Toury',
+                company: 'TouryAI',
+                image: 'images/toury.png',
+                desc: '[insert description]'
+            },
+            joshua_trees_thumbnail: {
+                title: 'Joshua Trees',
+                company: 'Company',
+                image: 'images/joshua_trees.png',
+                desc: '[insert description]'
+            },
+            reed_college_thumbnail: {
+                title: 'Student Government UI Design',
+                company: 'Reed College',
+                image: 'images/reed_college.png',
+                desc: 'The Reed College Student Body Senate is the representative body of the Reed College Student Body for all its legislative, executive, and judicial purposes, and represents the interests of the Student Body to the Faculty, the Administration, and the Trustees of Reed College.'
+            }
+        };
 
-function showWork(key) {
-    const data = workData[key];
-    document.getElementById('detail-image').src = data.image;
-    document.getElementById('detail-image').alt = data.title;
-    document.getElementById('detail-title-bold').textContent = data.title;
-    document.getElementById('detail-company').textContent = data.company;
-    document.getElementById('detail-desc').textContent = data.desc;
-}
+        // Set default active thumbnail on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('[onclick="showWork(\'toury_thumbnail\')"]').classList.add('active');
+        });
+
+        function showWork(key) {
+            const data = workData[key];
+            document.getElementById('detail-image').src = data.image;
+            document.getElementById('detail-image').alt = data.title;
+            document.getElementById('detail-title-bold').textContent = data.title;
+            document.getElementById('detail-company').textContent = data.company;
+            document.getElementById('detail-desc').textContent = data.desc;
+
+            // Remove active from all, then set on clicked item
+            document.querySelectorAll('.showcase-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[onclick="showWork('${key}')"]`).classList.add('active');
+        }
         // ====== END WORK DETAIL DATA ======
 
         // Smooth scroll to #work

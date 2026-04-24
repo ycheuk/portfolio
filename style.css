@@ -387,3 +387,16 @@ body {
   height: 1vh;
   object-fit: fill;
 }
+
+/* Thumbnail size */
+.showcase-thumb {
+  width: 7vw;
+  height: auto;
+  object-fit: cover;
+  transition: width 0.4s ease;   /* ← smooth size animation */
+}
+
+/* Active thumbnail — slightly larger */
+.showcase-item.active .showcase-thumb {
+  width: 8.5vw;                  /* ← adjust: how much larger the active thumb gets */
+}
