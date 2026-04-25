@@ -176,13 +176,34 @@ body {
   animation: bounce 1.8s ease-in-out infinite;
 }
 
-/* Showcase container — sits between the two arrows */
-.showcase {
+/* Showcase wrapper — holds arrows + thumbnails in a row */
+.showcase-wrapper {
   position: absolute;
-  top: 15vh;
-  bottom: 55vh;
-  left: 35%;
-  right: 35%;
+  top: 24vh;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;              /* ← adjust: gap between arrows and thumbnail row */
+}
+
+/* Left and right arrows */
+.showcase-arrow {
+  width: 2.5vw;            /* ← adjust: arrow width */
+  height: auto;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.showcase-arrow:hover {
+  opacity: 1;
+}
+
+/* Showcase — now inside wrapper, no longer needs position: absolute */
+.showcase {
   display: flex;
   flex-direction: row;
   align-items: center;

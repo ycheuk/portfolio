@@ -43,19 +43,23 @@
             <img src="images/line_break_right.png" class="line-break-img" alt="" />
         </div>
 
-        <div class="showcase">
-            <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
-                <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
+        <div class="showcase-wrapper">
+            <img src="images/left_arrow.png" class="showcase-arrow left-arrow" alt="Previous" />
+            <div class="showcase">
+                <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
+                    <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
+                </div>
+                <div class="showcase-item" onclick="showWork('toury_thumbnail')">
+                    <img src="images/toury_thumbnail.png" alt="toury_thumbnail" class="showcase-thumb" />
+                </div>
+                <div class="showcase-item" onclick="showWork('joshua_trees_thumbnail')">
+                    <img src="images/joshua_trees_thumbnail.png" alt="Joshua Trees" class="showcase-thumb" />
+                </div>
+                <div class="showcase-item" onclick="showWork('reed_college_thumbnail')">
+                    <img src="images/reed_college_thumbnail.png" alt="Reed College" class="showcase-thumb" />
+                </div>
             </div>
-            <div class="showcase-item" onclick="showWork('toury_thumbnail')">
-                <img src="images/toury_thumbnail.png" alt="toury_thumbnail" class="showcase-thumb" />
-            </div>
-            <div class="showcase-item" onclick="showWork('joshua_trees_thumbnail')">
-                <img src="images/joshua_trees_thumbnail.png" alt="Joshua Trees" class="showcase-thumb" />
-            </div>
-            <div class="showcase-item" onclick="showWork('reed_college_thumbnail')">
-                <img src="images/reed_college_thumbnail.png" alt="Reed College" class="showcase-thumb" />
-            </div>
+            <img src="images/right_arrow.png" class="showcase-arrow right-arrow" alt="Next" />
         </div>
 
         <img src="images/line_break.png" class="section-line-break" alt="" />
@@ -63,29 +67,19 @@
         <div class="work-detail" id="work-detail">
             <img src="images/toury.png" alt="Selected work" class="detail-image" id="detail-image" />
             <div class="detail-text">
-
-                <!-- TITLE: bold project name + bullet + unbolded company -->
                 <p class="detail-title">
                     <span id="detail-title-bold">Smart Tourism Mobile App</span>
                     <span class="detail-title-separator"> • </span>
                     <span id="detail-company" class="detail-company">TouryAI</span>
                 </p>
-
-                <!-- DESCRIPTION -->
-                <p class="detail-desc" id="detail-desc">TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal. Born from a passion for exploration, TouryAI's mission is to make travel smarter, more engaging, and deeply personal, empowering explorers everywhere to see the world with fresh eyes.</p>
-
-                <!-- LABELS + SUCCESSES stacked together -->
+                <p class="detail-desc" id="detail-desc">TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal.</p>
                 <div class="detail-labels-row">
-
-                    <!-- Label images -->
                     <div class="detail-labels" id="detail-labels">
                         <img src="images/label_1.png" class="detail-label" />
                         <img src="images/label_2.png" class="detail-label" />
                         <img src="images/label_3.png" class="detail-label" />
                         <img src="images/label_4.png" class="detail-label" />
                     </div>
-
-                    <!-- Extra labels -->
                     <div class="detail-successes">
                         <div class="success-item">
                             <p class="success-label">My Role</p>
@@ -141,7 +135,6 @@
             document.getElementById('detail-company').textContent = data.company;
             document.getElementById('detail-desc').textContent = data.desc;
 
-            // Dynamically render only this project's labels
             const labelsContainer = document.getElementById('detail-labels');
             labelsContainer.innerHTML = '';
             data.labels.forEach(src => {
@@ -151,11 +144,13 @@
                 labelsContainer.appendChild(img);
             });
 
-            // Remove active from all, then set on clicked item
             document.querySelectorAll('.showcase-item').forEach(item => {
                 item.classList.remove('active');
             });
             document.querySelector(`[onclick="showWork('${key}')"]`).classList.add('active');
+
+            // Keep currentIndex in sync when clicking thumbnails directly
+            currentIndex = workOrder.indexOf(key);
         }
 
         // Set default active thumbnail on load
@@ -208,6 +203,39 @@
                 requestAnimationFrame(step);
             });
         });
+
+        // ====== ARROW NAVIGATION ======
+        // Order of projects — matches left-to-right thumbnail order
+        const workOrder = [
+            'brothers_buffet_thumbnail',
+            'toury_thumbnail',
+            'joshua_trees_thumbnail',
+            'reed_college_thumbnail'
+        ];
+
+        let currentIndex = 1; // ← default starting index (1 = toury, matches DOMContentLoaded)
+
+        document.querySelector('.left-arrow').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showWork(workOrder[currentIndex]);
+            }
+        });
+
+        document.querySelector('.right-arrow').addEventListener('click', () => {
+            if (currentIndex < workOrder.length - 1) {
+                currentIndex++;
+                showWork(workOrder[currentIndex]);
+            }
+        });
+        // ====== END ARROW NAVIGATION ======
     </script>
 </body>
 </html>
+
+<!--
+
+Things needing fixing:
+- Thumbnails bounce when switching projects
+
+ -->
