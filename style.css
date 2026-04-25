@@ -32,7 +32,7 @@ body {
 }
 
 .center {
-  animation: fade-in 1s ease-out 0.6s forwards; /* ← 0.6s delay, adjust freely */
+  animation: fade-in 1s ease-out 0.5s forwards; /* ← 0.6s delay, adjust freely */
   opacity: 0; /* ← keeps it hidden before animation starts */
 }
 
@@ -109,6 +109,17 @@ body {
 }
 
 /* Nav wrapper — fixed to top of screen */
+@keyframes fade-in-from-top {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px); /* ← adjust 20px for how far above it starts */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .header-nav {
   position: fixed;
   top: 5vh;
@@ -116,8 +127,10 @@ body {
   transform: translateX(-50%);
   max-width: 90vw;
   z-index: 100;
-  border-radius: 500px;    /* ← match to bar's actual corner roundness */
+  border-radius: 500px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  animation: fade-in-from-top 1s ease-out 0.3s forwards;
 }
 
 /* Header bar image — fills the nav naturally */
@@ -467,3 +480,48 @@ body {
   opacity: 1;
   transition: opacity 0.3s ease;  /* ← smooth fade */
 }
+
+/* ====== WORK SECTION FADE IN ====== */
+
+.work-section {
+  opacity: 0;
+  transition: opacity 4s ease;
+}
+
+.work-section.visible {
+  opacity: 1;
+}
+
+/* ====== END WORK SECTION FADE IN ====== */
+
+/* ====== SIDE IMAGE FLOAT ANIMATIONS ====== */
+
+@keyframes float-left {
+  0%, 100% {
+    transform: translate(-130%, -50%) translateX(0);
+  }
+  50% {
+    transform: translate(-130%, -50%) translateX(-8px); /* ← adjust px for float distance */
+  }
+}
+
+@keyframes float-right {
+  0%, 100% {
+    transform: translate(30%, -50%) translateX(0);
+  }
+  50% {
+    transform: translate(30%, -50%) translateX(8px); /* ← adjust px for float distance */
+  }
+}
+
+.left {
+  animation: fade-in-from-left 1s ease-out forwards,
+             float-left 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+}
+
+.right {
+  animation: fade-in-from-right 1s ease-out forwards,
+             float-right 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+}
+
+/* ====== END SIDE IMAGE FLOAT ANIMATIONS ====== */

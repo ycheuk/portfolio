@@ -271,6 +271,24 @@
             }
         });
         // ====== END ARROW NAVIGATION ======
+
+        // ====== WORK SECTION FADE IN ======
+        const workSection = document.getElementById('work');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    workSection.classList.add('visible');
+                    observer.unobserve(workSection); // ← stops watching after first trigger
+                }
+            });
+        }, {
+            threshold: 0.2,        // ← 20% of section must be visible to trigger
+            rootMargin: '0px'      // ← no extra margin, triggers exactly at viewport edge
+        });
+
+        observer.observe(workSection);
+        // ====== END WORK SECTION FADE IN ======
     </script>
 </body>
 </html>
