@@ -19,7 +19,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 50vh;
-    z-index: 2; /* sits on top */
+    z-index: 2;
 }
 
 /* Side images */
@@ -72,20 +72,23 @@ body {
   transform: translateX(-50%);
   max-width: 90vw;
   z-index: 100;
+  border-radius: 500px;    /* ← match to bar's actual corner roundness */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Header bar image — fills the nav naturally */
 .header-bar {
   display: block;
-  width: 110vh;
+  width: 85vh;
   height: auto;
+  border-radius: 12px;   /* ← same value as header-nav */
 }
 
 /* Items row — overlaid on top of the bar image */
 .nav-items {
   position: absolute;
-  top: 5%;
-  left: 8.5vw;
+  top: 35%;
+  left: 2.5vw;
   transform: translateY(-5%);
   display: flex;
   align-items: center;
@@ -95,8 +98,8 @@ body {
 /* Right nav items */
 .nav-items-right {
   position: absolute;
-  top: 5%;
-  right: 8.5vw;
+  top: 36%;
+  right: 2.5vw;
   transform: translateY(-5%);
   display: flex;
   align-items: center;
@@ -146,7 +149,7 @@ body {
   width: 100%;
   height: 100vh;
   background-color: #F2EDE9;
-  position: relative;   /* ADD THIS */
+  position: relative;
 }
 
 /* Work section arrows — anchored to work section */
@@ -173,8 +176,6 @@ body {
   animation: bounce 1.8s ease-in-out infinite;
 }
 
-/* ====== SHOWCASE ====== */
-
 /* Showcase container — sits between the two arrows */
 .showcase {
   position: absolute;
@@ -200,18 +201,14 @@ body {
 
 /* Thumbnail size */
 .showcase-thumb {
-  width: 7vw;         /* ← thumbnail width — adjust freely (currently 15% of screen width) */
+  width: 7vw;         /* ← thumbnail width */
   height: auto;
   object-fit: cover;
 }
 
-/* ====== END SHOWCASE ====== */
-
-/* ====== WORK DETAIL PANEL ====== */
-
 .work-detail {
   position: absolute;
-  top: 43vh;           /* ← was 35vh, pushed down to match */
+  top: 43vh;
   bottom: 12vh;
   left: 10%;
   right: 10%;
@@ -227,8 +224,8 @@ body {
   height: auto;
   object-fit: cover;
   flex-shrink: 0;
-  border-radius: 10px;                          /* ← rounded corners */
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15); /* ← light shadow */
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Text block on the right */
@@ -236,13 +233,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5vh;
-  align-self: flex-start;   /* ← top-aligns the text block */
+  align-self: flex-start;
 }
 
 .detail-title {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 16px;     /* ← adjust: title font size */
+  font-size: 16px;
   letter-spacing: 0.03em;
   margin: 0;
 }
@@ -250,27 +247,23 @@ body {
 .detail-desc {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 12px;     /* ← adjust: description font size */
+  font-size: 12px;
   letter-spacing: 0.02em;
-  line-height: 1.7;    /* ← adjust: line spacing within description */
+  line-height: 1.7;
   margin: 0;
-  opacity: 0.7;        /* ← adjust: soften the description text */
+  opacity: 0.7;
   white-space: pre-line;
 }
-
-/* ====== END WORK DETAIL PANEL ====== */
-
-/* ====== DETAIL TEXT PANEL ====== */
 
 /* Title line: bold name + bullet + company */
 .detail-title {
   font-family: 'Crimson Text', serif;
-  font-size: 24px;           /* ← adjust: title font size */
+  font-size: 24px;
   line-height: 1.2;
 }
 
 #detail-title-bold {
-  font-weight: 700;          /* bold project name */
+  font-weight: 700;
 }
 
 .detail-title-separator {
@@ -278,17 +271,17 @@ body {
 }
 
 .detail-company {
-  font-weight: 400;          /* unbolded company */
+  font-weight: 400;
 }
 
 /* Description */
 .detail-desc {
   font-family: 'Crimson Text', serif;
-  font-size: 15px;           /* ← adjust: description font size */
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.4;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
   opacity: 0.85;
 }
 
@@ -303,14 +296,14 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1vw;                  /* ← adjust: gap between label images */
-  margin-bottom: 15px;
+  gap: 1vw;    /* ← adjust: gap between label images */
+  margin-bottom: 1vh;
 }
 
 /* Individual label image */
 .detail-label {
-  width: 7vw;                /* ← adjust: label image width (3% of screen) */
-  height: auto;
+  height: 5vh;    /* ← adjust: label image width */
+  width: auto;
 }
 
 /* Successes row — sits on top of labels */
@@ -320,7 +313,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 3vw;                  /* ← adjust: gap between success items */
+  gap: 3vw;    /* ← adjust: gap between success items */
 }
 
 /* Single success block */
@@ -333,50 +326,44 @@ body {
 /* "My Role" label — unbolded */
 .success-label {
   font-family: 'Crimson Text', serif;
-  font-size: 15px;           /* ← adjust */
+  font-size: 15px;    /* ← adjust */
   font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: 1vh;
   opacity: 50%;
 }
 
 /* "UI Designer" value — bolded */
 .success-value {
   font-family: 'Crimson Text', serif;
-  font-size: 15px;           /* ← adjust */
+  font-size: 15px;    /* ← adjust */
   font-weight: 700;
   margin: 0;
 }
 
-/* ====== END DETAIL TEXT PANEL ====== */
-
-/* ====== NOTABLE WORKS TITLE ROW ====== */
-
 .showcase-header {
   position: absolute;
-  top: 20vh;           /* ← adjust: how far down from top of work-section */
-  left: 10%;           /* ← adjust: matches work-detail left margin */
-  right: 10%;          /* ← adjust: matches work-detail right margin */
+  top: 20vh;    /* ← adjust */
+  left: 10%;    /* ← adjust */
+  right: 10%;    /* ← adjust */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2vh;            /* ← adjust: gap between line breaks and title text */
+  gap: 2vh;    /* ← adjust */
 }
 
 .showcase-title {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 15px;     /* ← adjust: title font size */
+  font-size: 15px;    /* ← adjust */
   letter-spacing: 0.40em;  /* ← 40% letter spacing */
   white-space: nowrap;
 }
 
 .line-break-img {
-  height: 1vh;         /* ← adjust: height of the line break images */
+  height: 1vh;    /* ← adjust */
   width: auto;
 }
-
-/* ====== END NOTABLE WORKS TITLE ROW ====== */
 
 /* Line break between thumbnails and work detail */
 .section-line-break {
@@ -399,5 +386,5 @@ body {
 
 /* Active thumbnail — slightly larger */
 .showcase-item.active .showcase-thumb {
-  width: 8.5vw;                  /* ← adjust: how much larger the active thumb gets */
+  width: 8.5vw;    /* ← adjust */
 }
