@@ -22,6 +22,20 @@ body {
     z-index: 2;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.center {
+  animation: fade-in 1s ease-out 0.6s forwards; /* ← 0.6s delay, adjust freely */
+  opacity: 0; /* ← keeps it hidden before animation starts */
+}
+
 /* Side images */
 .side {
     position: absolute;
@@ -41,6 +55,36 @@ body {
 .right {
     left: 50%;
     transform: translate(40%, -50%);
+}
+
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translate(-130%, -50%) translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-130%, -50%) translateX(0);
+  }
+}
+
+@keyframes fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translate(30%, -50%) translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(30%, -50%) translateX(0);
+  }
+}
+
+.left {
+  animation: fade-in-from-left 1s ease-out forwards;
+}
+
+.right {
+  animation: fade-in-from-right 1s ease-out forwards;
 }
 
 /* Down arrow */
