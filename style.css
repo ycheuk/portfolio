@@ -12,15 +12,51 @@ body {
     width: 100%;
 }
 
-/* Center image (headshot) */
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50vh;
-    z-index: 2;
+/* ====== HEADSHOT HOVER ====== */
+
+.headshot-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 44vh;
+  width: auto;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.headshot-default,
+.headshot-hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 44vh;        /* ← matches wrapper height */
+  width: auto;
+  transition: opacity 0.4s ease;
+}
+
+.headshot-default {
+  opacity: 1;
+  animation: fade-in 1s ease-out 0.5s both;
+}
+
+.headshot-hover {
+  opacity: 0;
+}
+
+.headshot-wrapper:hover .headshot-default {
+  opacity: 0;
+}
+
+.headshot-wrapper:hover .headshot-hover {
+  opacity: 1;
+}
+
+/* ====== END HEADSHOT HOVER ====== */
 
 @keyframes fade-in {
   0% {
@@ -31,9 +67,49 @@ body {
   }
 }
 
-.center {
-  animation: fade-in 1s ease-out 0.5s forwards; /* ← 0.6s delay, adjust freely */
-  opacity: 0; /* ← keeps it hidden before animation starts */
+/* Headshot top and bottom layers */
+@keyframes fade-in-from-top-small {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%) translateY(-20px); /* ← adjust 20px for starting offset */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -60%) translateY(0);
+  }
+}
+
+@keyframes fade-in-from-bottom-small {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) translateY(20px); /* ← adjust 20px for starting offset */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) translateY(0);
+  }
+}
+
+.headshot-top {
+  position: absolute;
+  top: 31%;
+  left: 49.8%;
+  transform: translate(-50%, -60%);
+  height: 10vh;
+  width: auto;
+  opacity: 0;
+  animation: fade-in-from-top-small 1s ease-out 1s forwards; /* ← delay matches .center */
+}
+
+.headshot-bottom {
+  position: absolute;
+  top: 69%;
+  left: 49.9%;
+  transform: translate(-50%, -40%);
+  height: 8.5vh;
+  width: auto;
+  opacity: 0;
+  animation: fade-in-from-bottom-small 1s ease-out 1s forwards; /* ← delay matches .center */
 }
 
 /* Side images */
@@ -60,22 +136,22 @@ body {
 @keyframes fade-in-from-left {
   0% {
     opacity: 0;
-    transform: translate(-130%, -50%) translateX(-40px);
+    transform: translate(-140%, -50%) translateX(-40px);
   }
   100% {
     opacity: 1;
-    transform: translate(-130%, -50%) translateX(0);
+    transform: translate(-140%, -50%) translateX(0);
   }
 }
 
 @keyframes fade-in-from-right {
   0% {
     opacity: 0;
-    transform: translate(30%, -50%) translateX(40px);
+    transform: translate(40%, -50%) translateX(40px);
   }
   100% {
     opacity: 1;
-    transform: translate(30%, -50%) translateX(0);
+    transform: translate(40%, -50%) translateX(0);
   }
 }
 
@@ -498,19 +574,19 @@ body {
 
 @keyframes float-left {
   0%, 100% {
-    transform: translate(-130%, -50%) translateX(0);
+    transform: translate(-140%, -50%) translateX(0);
   }
   50% {
-    transform: translate(-130%, -50%) translateX(-8px); /* ← adjust px for float distance */
+    transform: translate(-140%, -50%) translateX(-8px); /* ← adjust px for float distance */
   }
 }
 
 @keyframes float-right {
   0%, 100% {
-    transform: translate(30%, -50%) translateX(0);
+    transform: translate(40%, -50%) translateX(0);
   }
   50% {
-    transform: translate(30%, -50%) translateX(8px); /* ← adjust px for float distance */
+    transform: translate(40%, -50%) translateX(8px); /* ← adjust px for float distance */
   }
 }
 
