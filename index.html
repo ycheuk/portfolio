@@ -46,11 +46,11 @@
         <div class="showcase-wrapper">
             <img src="images/left_arrow.png" class="showcase-arrow left-arrow" alt="Previous" />
             <div class="showcase">
-                <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
-                    <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
-                </div>
                 <div class="showcase-item" onclick="showWork('toury_thumbnail')">
                     <img src="images/toury_thumbnail.png" alt="toury_thumbnail" class="showcase-thumb" />
+                </div>
+                <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
+                    <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
                 </div>
                 <div class="showcase-item" onclick="showWork('joshua_trees_thumbnail')">
                     <img src="images/joshua_trees_thumbnail.png" alt="Joshua Trees" class="showcase-thumb" />
@@ -128,29 +128,37 @@
         };
 
         function showWork(key) {
-            const data = workData[key];
-            document.getElementById('detail-image').src = data.image;
-            document.getElementById('detail-image').alt = data.title;
-            document.getElementById('detail-title-bold').textContent = data.title;
-            document.getElementById('detail-company').textContent = data.company;
-            document.getElementById('detail-desc').textContent = data.desc;
+            const detail = document.getElementById('work-detail');
 
-            const labelsContainer = document.getElementById('detail-labels');
-            labelsContainer.innerHTML = '';
-            data.labels.forEach(src => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.classList.add('detail-label');
-                labelsContainer.appendChild(img);
-            });
+            // Fade out
+            detail.style.opacity = '0';
 
-            document.querySelectorAll('.showcase-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            document.querySelector(`[onclick="showWork('${key}')"]`).classList.add('active');
+            setTimeout(() => {
+                const data = workData[key];
+                document.getElementById('detail-image').src = data.image;
+                document.getElementById('detail-image').alt = data.title;
+                document.getElementById('detail-title-bold').textContent = data.title;
+                document.getElementById('detail-company').textContent = data.company;
+                document.getElementById('detail-desc').textContent = data.desc;
 
-            // Keep currentIndex in sync when clicking thumbnails directly
-            currentIndex = workOrder.indexOf(key);
+                const labelsContainer = document.getElementById('detail-labels');
+                labelsContainer.innerHTML = '';
+                data.labels.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.classList.add('detail-label');
+                    labelsContainer.appendChild(img);
+                });
+
+                document.querySelectorAll('.showcase-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelector(`[onclick="showWork('${key}')"]`).classList.add('active');
+                currentIndex = workOrder.indexOf(key);
+
+                // Fade back in
+                detail.style.opacity = '1';
+            }, 300); // ← matches the transition duration above
         }
 
         // Set default active thumbnail on load
@@ -207,13 +215,13 @@
         // ====== ARROW NAVIGATION ======
         // Order of projects — matches left-to-right thumbnail order
         const workOrder = [
+            'toury_thumbnail',           // ← now first
             'brothers_buffet_thumbnail',
-            'toury_thumbnail',
             'joshua_trees_thumbnail',
             'reed_college_thumbnail'
         ];
 
-        let currentIndex = 1; // ← default starting index (1 = toury, matches DOMContentLoaded)
+        let currentIndex = 0; // ← 0 = toury, now the first item
 
         document.querySelector('.left-arrow').addEventListener('click', () => {
             if (currentIndex > 0) {
