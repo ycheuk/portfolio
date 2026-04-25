@@ -333,7 +333,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;         /* ← wraps to next row after 3 items */
   align-items: flex-start;
-  gap: 1vh 10vw;           /* ← vertical gap between rows, 10vw horizontal gap between items */
+  gap: 1vh 5vw;           /* ← vertical gap between rows, 10vw horizontal gap between items */
   max-width: 30vw;         /* ← forces wrap after ~3 items at 10vw gap — adjust if needed */
 }
 
