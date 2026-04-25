@@ -329,12 +329,12 @@ body {
 
 /* Successes row — sits on top of labels */
 .detail-successes {
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;         /* ← wraps to next row after 3 items */
   align-items: flex-start;
-  gap: 3vw;    /* ← adjust: gap between success items */
+  gap: 1vh 10vw;           /* ← vertical gap between rows, 10vw horizontal gap between items */
+  max-width: 30vw;         /* ← forces wrap after ~3 items at 10vw gap — adjust if needed */
 }
 
 /* Single success block */
