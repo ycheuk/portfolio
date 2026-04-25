@@ -82,7 +82,7 @@
                     </div>
                     <div class="detail-successes">
                         <div class="success-item">
-                            <p class="success-label">My Role</p>
+                            <p class="success-label">My </p>
                             <p class="success-value">UI Designer</p>
                         </div>
                     </div>
@@ -97,40 +97,54 @@
 
     <script>
         const workData = {
-            brothers_buffet_thumbnail: {
-                title: 'Local Chinese Dining Website',
-                company: 'Brother\'s Buffet',
-                image: 'images/brothers_buffet.png',
-                desc: 'Brother\'s Buffet is a family-owned American-Chinese buffet restaurant located in Pottsville, Pennsylvania. Known for its extensive selection of dishes, cozy atmosphere, and affordable prices, Brother\'s Buffet has been a local favorite for decades. \n\nThe website serves as a digital extension of the restaurant, showcasing its menu, business hours, address, pricing, and photo gallery to attract new customers and simplify communication.',
-                labels: ['images/ui_design_label.png', 'images/web_development_label.png', 'images/restaurant_website_label.png', 'images/small_business_label.png']
-            },
             toury_thumbnail: {
                 title: 'Smart Tourism Mobile App',
                 company: 'TouryAI',
                 image: 'images/toury.png',
                 desc: 'TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal. Born from a passion for exploration, TouryAI\'s mission is to make travel smarter, more engaging, and deeply personal, empowering explorers everywhere to see the world with fresh eyes.',
-                labels: ['images/uiux_design_label.png', 'images/b2c_label.png', 'images/mobile_app_design_label.png', 'images/tourism_label.png']
+                labels: ['images/uiux_design_label.png', 'images/b2c_label.png', 'images/mobile_app_design_label.png', 'images/tourism_label.png'],  // ← comma here
+                successes: [
+                    { label: 'Tools', value: 'Figma, Jira' },
+                    { label: 'Contribution', value: 'Team' }
+                ]
+            },
+            brothers_buffet_thumbnail: {
+                title: 'Local Chinese Dining Website',
+                company: 'Brother\'s Buffet',
+                image: 'images/brothers_buffet.png',
+                desc: 'Brother\'s Buffet is a family-owned American-Chinese buffet restaurant. This website serves as a digital extension of the restaurant, showcasing its menu, business hours, address, pricing, and photo gallery to attract new customers and simplify communication.',
+                labels: ['images/ui_design_label.png', 'images/web_development_label.png', 'images/restaurant_website_label.png', 'images/small_business_label.png'],  // ← comma here
+                successes: [
+                    { label: 'Tools', value: 'Figma, GitHub' },
+                    { label: 'Contribution', value: 'Solo' }
+                ]
             },
             joshua_trees_thumbnail: {
-                title: 'Conservation Website (HeyJTree)',
+                title: 'Conservation Website',
                 company: 'Lancaster Museum of Art and History',
                 image: 'images/joshua_trees.png',
                 desc: 'Hey JTree is an interactive website designed to offer connection between people and the Joshua trees of the Mojave Desert. The platform documents individual trees in Joshua Tree National Park and the Prime Desert Woodland Preserve, allowing visitors to explore tree profiles, share their experiences, and build a deeper relationship with nature.',
-                labels: ['images/uiux_design_label.png', 'images/web_development_label.png', 'images/enviromental_conservation_label.png']
+                labels: ['images/uiux_design_label.png', 'images/web_development_label.png', 'images/enviromental_conservation_label.png'],  // ← comma here
+                successes: [
+                    { label: 'Tools', value: 'Figma, Wordpress' },
+                    { label: 'Contribution', value: 'Solo' }
+                ]
             },
             reed_college_thumbnail: {
                 title: 'Student Government UI Design',
                 company: 'Reed College',
                 image: 'images/reed_college.png',
                 desc: 'The Reed College Student Body Senate is the representative body of the Reed College Student Body for all its legislative, executive, and judicial purposes, and represents the interests of the Student Body to the Faculty, the Administration, and the Trustees of Reed College.',
-                labels: ['images/uiux_design_label.png', 'images/web_development_label.png', 'images/institutional_website_label.png']
+                labels: ['images/uiux_design_label.png', 'images/web_development_label.png', 'images/institutional_website_label.png'],  // ← comma here
+                successes: [
+                    { label: 'Tools', value: 'Figma, Wix' },
+                    { label: 'Contribution', value: 'Solo' }
+                ]
             }
         };
 
         function showWork(key) {
             const detail = document.getElementById('work-detail');
-
-            // Fade out
             detail.style.opacity = '0';
 
             setTimeout(() => {
@@ -141,6 +155,7 @@
                 document.getElementById('detail-company').textContent = data.company;
                 document.getElementById('detail-desc').textContent = data.desc;
 
+                // Dynamically render labels
                 const labelsContainer = document.getElementById('detail-labels');
                 labelsContainer.innerHTML = '';
                 data.labels.forEach(src => {
@@ -150,15 +165,27 @@
                     labelsContainer.appendChild(img);
                 });
 
+                // Dynamically render successes
+                const successesContainer = document.querySelector('.detail-successes');
+                successesContainer.innerHTML = '';
+                data.successes.forEach(item => {
+                    const div = document.createElement('div');
+                    div.classList.add('success-item');
+                    div.innerHTML = `
+                        <p class="success-label">${item.label}</p>
+                        <p class="success-value">${item.value}</p>
+                    `;
+                    successesContainer.appendChild(div);
+                });
+
                 document.querySelectorAll('.showcase-item').forEach(item => {
                     item.classList.remove('active');
                 });
                 document.querySelector(`[onclick="showWork('${key}')"]`).classList.add('active');
                 currentIndex = workOrder.indexOf(key);
 
-                // Fade back in
                 detail.style.opacity = '1';
-            }, 300); // ← matches the transition duration above
+            }, 300);
         }
 
         // Set default active thumbnail on load
