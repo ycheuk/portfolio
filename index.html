@@ -109,12 +109,33 @@
             <img src="images/up_arrow.png" alt="Scroll up" class="about-up-arrow" />
         </a>
 
+        <!-- ====== ABOUT SLIDES CONTAINER ====== -->
+        <div class="about-slides">
+
+            <!-- SLIDE 1 -->
+            <div class="about-slide active-slide">
+                <div class="about-header">
+                    <img src="images/line_break_left.png" class="line-break-img" alt="" />
+                    <span class="about-title">ABOUT</span>
+                    <img src="images/line_break_right.png" class="line-break-img" alt="" />
+                </div>
+                <img src="images/about_pictures.png" alt="Me and my parents" class="about-photo" />
+            </div>
+
+            <!-- SLIDE 2 — placeholder -->
+            <div class="about-slide">
+                <p class="about-slide-placeholder">2nd slide here</p>
+            </div>
+
+        </div>
+        <!-- ====== END ABOUT SLIDES CONTAINER ====== -->
+
         <!-- LEFT AND RIGHT ARROWS -->
         <div class="about-arrows">
-            <img src="images/left_arrow.png" class="about-side-arrow" alt="Previous" />
-            <img src="images/right_arrow.png" class="about-side-arrow" alt="Next" />
+            <img src="images/left_arrow.png" class="about-side-arrow" alt="Previous" id="about-left-arrow" />
+            <img src="images/right_arrow.png" class="about-side-arrow" alt="Next" id="about-right-arrow" />
         </div>
-        
+
     </section>
     <!-- ====== END ABOUT SECTION ====== -->
 
@@ -383,6 +404,30 @@
             });
         });
         // ====== END SMOOTH SCROLL TO #work FROM ABOUT ======
+
+        // ====== ABOUT SLIDESHOW ======
+        const aboutSlides = document.querySelectorAll('.about-slide');
+        let aboutIndex = 0;
+
+        function showAboutSlide(index) {
+            aboutSlides.forEach(slide => slide.classList.remove('active-slide'));
+            aboutSlides[index].classList.add('active-slide');
+        }
+
+        document.getElementById('about-left-arrow').addEventListener('click', () => {
+            if (aboutIndex > 0) {
+                aboutIndex--;
+                showAboutSlide(aboutIndex);
+            }
+        });
+
+        document.getElementById('about-right-arrow').addEventListener('click', () => {
+            if (aboutIndex < aboutSlides.length - 1) {
+                aboutIndex++;
+                showAboutSlide(aboutIndex);
+            }
+        });
+        // ====== END ABOUT SLIDESHOW ======
     </script>
 </body>
 </html>

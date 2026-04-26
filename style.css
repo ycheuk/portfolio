@@ -697,4 +697,78 @@ body {
   animation: arrow-bounce-right 1.8s ease-in-out infinite;
 }
 
+/* ====== ABOUT SLIDES ====== */
+
+.about-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.about-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;   /* ← adjust: slide fade speed */
+  pointer-events: none;
+}
+
+.about-slide.active-slide {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ABOUT title row — same style as NOTABLE WORKS */
+.about-header {
+  position: absolute;
+  top: 23vh;               /* ← adjust: gap below up arrow */
+  left: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+}
+
+.about-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.40em;
+  white-space: nowrap;
+}
+
+/* About photo */
+.about-photo {
+  position: absolute;
+  top: 29vh;               /* ← adjust: gap below ABOUT header */
+  height: 20vh;            /* ← adjust: photo height */
+  width: auto;
+}
+
+/* Placeholder for slide 2 */
+.about-slide-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+}
+
+/* ====== END ABOUT SLIDES ====== */
+
 /* ====== END ABOUT SECTION ====== */
