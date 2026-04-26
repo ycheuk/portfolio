@@ -12,7 +12,7 @@ body {
     width: 100%;
 }
 
-/* ====== HEADSHOT HOVER ====== */
+/* ====== HEADSHOT ====== */
 
 .headshot-wrapper {
   position: absolute;
@@ -55,8 +55,6 @@ body {
 .headshot-wrapper:hover .headshot-hover {
   opacity: 1;
 }
-
-/* ====== END HEADSHOT HOVER ====== */
 
 @keyframes fade-in {
   0% {
@@ -112,7 +110,9 @@ body {
   animation: fade-in-from-bottom-small 1s ease-out 1s forwards; /* ← delay matches .center */
 }
 
-/* Side images */
+/* ====== END HEADSHOT ====== */
+
+/* ====== SIDE IMAGES ====== */
 .side {
     position: absolute;
     top: 50%;
@@ -162,6 +162,39 @@ body {
 .right {
   animation: fade-in-from-right 1s ease-out forwards;
 }
+
+/* ====== SIDE IMAGE FLOAT ANIMATIONS ====== */
+
+@keyframes float-left {
+  0%, 100% {
+    transform: translate(-140%, -50%) translateX(0);
+  }
+  50% {
+    transform: translate(-140%, -50%) translateX(-8px); /* ← adjust px for float distance */
+  }
+}
+
+@keyframes float-right {
+  0%, 100% {
+    transform: translate(40%, -50%) translateX(0);
+  }
+  50% {
+    transform: translate(40%, -50%) translateX(8px); /* ← adjust px for float distance */
+  }
+}
+
+.left {
+  animation: fade-in-from-left 1s ease-out forwards,
+             float-left 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+}
+
+.right {
+  animation: fade-in-from-right 1s ease-out forwards,
+             float-right 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+}
+
+/* ====== END SIDE IMAGE FLOAT ANIMATIONS ====== */
+/* ====== END SIDE IMAGES ====== */
 
 /* Down arrow */
 .down-arrow {
@@ -570,34 +603,98 @@ body {
 
 /* ====== END WORK SECTION FADE IN ====== */
 
-/* ====== SIDE IMAGE FLOAT ANIMATIONS ====== */
+/* ====== ABOUT SECTION ====== */
 
-@keyframes float-left {
+.about-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #F2EDE9;
+  position: relative;
+}
+
+.about-up-arrow-link {
+  position: absolute;
+  top: 15vh;             /* ← matches work-up-arrow-link top value */
+  left: 50%;
+  z-index: 200;
+  display: flex;
+}
+
+.about-up-arrow {
+  width: 6vmin;
+  height: auto;
+  animation: arrow-bounce-up 1.8s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce-up {
   0%, 100% {
-    transform: translate(-140%, -50%) translateX(0);
+    transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translate(-140%, -50%) translateX(-8px); /* ← adjust px for float distance */
+    transform: translateX(-50%) translateY(12px); /* ← bounces downward since arrow points up */
   }
 }
 
-@keyframes float-right {
+/* About section left/right arrows */
+.about-arrows {
+  position: absolute;
+  top: 50%;    /* ← adjust: vertical position */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8vw;    /* ← adjust: gap from each edge */
+}
+
+.about-side-arrow {
+  width: 4vw;    /* ← adjust: arrow width */
+  height: auto;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.about-side-arrow:hover {
+  opacity: 1;
+}
+
+@keyframes arrow-bounce-left {
   0%, 100% {
-    transform: translate(40%, -50%) translateX(0);
+    transform: translateX(0);
   }
   50% {
-    transform: translate(40%, -50%) translateX(8px); /* ← adjust px for float distance */
+    transform: translateX(-6px); /* ← adjust: bounce distance */
   }
 }
 
-.left {
-  animation: fade-in-from-left 1s ease-out forwards,
-             float-left 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+@keyframes arrow-bounce-right {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px); /* ← adjust: bounce distance */
+  }
 }
 
-.right {
-  animation: fade-in-from-right 1s ease-out forwards,
-             float-right 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+/* About section arrows */
+.about-side-arrow:first-child {
+  animation: arrow-bounce-left 1.8s ease-in-out infinite;
 }
 
-/* ====== END SIDE IMAGE FLOAT ANIMATIONS ====== */
+.about-side-arrow:last-child {
+  animation: arrow-bounce-right 1.8s ease-in-out infinite;
+}
+
+/* Work section showcase arrows */
+.left-arrow {
+  animation: arrow-bounce-left 1.8s ease-in-out infinite;
+}
+
+.right-arrow {
+  animation: arrow-bounce-right 1.8s ease-in-out infinite;
+}
+
+/* ====== END ABOUT SECTION ====== */
