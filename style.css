@@ -614,7 +614,7 @@ body {
 
 .about-up-arrow-link {
   position: absolute;
-  top: 15vh;             /* ← matches work-up-arrow-link top value */
+  top: 13vh;             /* ← matches work-up-arrow-link top value */
   left: 50%;
   z-index: 200;
   display: flex;
@@ -772,7 +772,7 @@ body {
 /* BIO label */
 .about-bio-label {
   position: absolute;
-  top: 55vh;               /* ← adjust: sits below the photo */
+  top: 54vh;               /* ← adjust: sits below the photo */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -783,7 +783,7 @@ body {
 /* Line break below BIO */
 .about-line-break {
   position: absolute;
-  top: 58vh;               /* ← adjust: sits below BIO label */
+  top: 57vh;               /* ← adjust: sits below BIO label */
   left: 50%;
   transform: translateX(-50%);
   width: auto;
@@ -793,7 +793,7 @@ body {
 /* Bio text */
 .about-bio-text {
   position: absolute;
-  top: 61vh;               /* ← adjust: sits below line break */
+  top: 60vh;               /* ← adjust: sits below line break */
   left: 50%;
   transform: translateX(-50%);
   width: 35vw;             /* ← adjust: text box width */
