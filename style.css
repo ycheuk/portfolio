@@ -840,7 +840,7 @@ body {
 /* Row of hanging items — sits just below the timeline line */
 .timeline-items {
   position: absolute;
-  top: 20.2vh;               /* ← matches .timeline-container top */
+  top: 20.4vh;               /* ← matches .timeline-container top */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -860,7 +860,7 @@ body {
 /* The hanging image (pin + line + logo) */
 .timeline-img {
   height: auto;            /* ← adjust: how long the hanging portion is */
-  width: 7vw;
+  width: 6vw;
 }
 
 /* Timeline date */
@@ -877,6 +877,18 @@ body {
   height: 5vh;         /* ← adjust: label height */
   width: auto;
   margin-top: 2vh;     /* ← adjust: gap between date and label */
+}
+
+/* Timeline description */
+.timeline-desc {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  font-size: 13px;         /* ← adjust: text size */
+  letter-spacing: 0.02em;
+  line-height: 1.3;        /* ← adjust: line spacing */
+  text-align: center;
+  max-width: 15vw;          /* ← adjust: wrapping width */
+  margin: 2vh 0 0 0;       /* ← 2vh gap above, no gap on other sides */
 }
 
 /* ====== END TIMELINE ====== */
