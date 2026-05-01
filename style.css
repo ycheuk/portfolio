@@ -807,6 +807,64 @@ body {
   white-space: pre-line;   /* ← respects the line breaks between paragraphs */
 }
 
+/* ====== TIMELINE ====== */
+
+/* Timeline base line + title wrapper */
+.timeline-container {
+  position: absolute;
+  top: 20.5vh;               /* ← adjust: vertical position of the timeline */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-line {
+  height: 1vh;             /* ← adjust: thickness of timeline line */
+  width: auto;
+}
+
+/* EXPERIENCES title overlaid on the line */
+.timeline-title {
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.40em;
+  white-space: nowrap;
+  background-color: #F2EDE9; /* ← matches page bg so it "cuts" through the line */
+  padding: 0 1.5vw;          /* ← adjust: breathing room around the text */
+}
+
+/* Row of hanging items — sits just below the timeline line */
+.timeline-items {
+  position: absolute;
+  top: 20.2vh;               /* ← matches .timeline-container top */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5vw;                /* ← adjust: horizontal gap between experiences */
+}
+
+/* Each individual experience group */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* title, date, desc, CTA will stack below the image naturally */
+}
+
+/* The hanging image (pin + line + logo) */
+.timeline-img {
+  height: auto;            /* ← adjust: how long the hanging portion is */
+  width: 7vw;
+}
+
+/* ====== END TIMELINE ====== */
+
 /* ====== END ABOUT SLIDES ====== */
 
 /* ====== END ABOUT SECTION ====== */
