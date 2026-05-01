@@ -863,6 +863,15 @@ body {
   width: 7vw;
 }
 
+/* Timeline date */
+.timeline-date {
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 2vh 0 0 0;     /* ← 2vh gap above, no gap on other sides */
+  text-align: center;
+}
+
 /* ====== END TIMELINE ====== */
 
 /* ====== END ABOUT SLIDES ====== */
