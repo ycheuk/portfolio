@@ -846,7 +846,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 5vw;                /* ← adjust: horizontal gap between experiences */
+  gap: 3vw;                /* ← adjust: horizontal gap between experiences */
 }
 
 /* Each individual experience group */
@@ -870,6 +870,13 @@ body {
   font-size: 16px;
   margin: 2vh 0 0 0;     /* ← 2vh gap above, no gap on other sides */
   text-align: center;
+}
+
+/* Timeline role label */
+.timeline-role {
+  height: 5vh;         /* ← adjust: label height */
+  width: auto;
+  margin-top: 2vh;     /* ← adjust: gap between date and label */
 }
 
 /* ====== END TIMELINE ====== */
