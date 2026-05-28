@@ -891,6 +891,39 @@ body {
   margin: 2vh 0 0 0;       /* ← 2vh gap above, no gap on other sides */
 }
 
+/* Timeline image hover wrapper */
+.timeline-img-wrapper {
+  position: relative;
+  width: 6vw;              /* ← matches timeline-img width */
+  cursor: pointer;
+}
+
+.timeline-img {
+  width: 6vw;
+  height: auto;
+  transition: opacity 0.4s ease;  /* ← crossfade speed */
+  display: block;
+}
+
+.timeline-img-default {
+  opacity: 1;
+}
+
+.timeline-img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.timeline-img-wrapper:hover .timeline-img-default {
+  opacity: 0;
+}
+
+.timeline-img-wrapper:hover .timeline-img-hover {
+  opacity: 1;
+}
+
 /* ====== END TIMELINE ====== */
 
 /* ====== END ABOUT SLIDES ====== */
