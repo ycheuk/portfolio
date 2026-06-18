@@ -34,7 +34,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 44vh;        /* ← matches wrapper height */
+  height: 44vh;
   width: auto;
   transition: opacity 0.4s ease;
 }
@@ -69,7 +69,7 @@ body {
 @keyframes fade-in-from-top-small {
   0% {
     opacity: 0;
-    transform: translate(-50%, -60%) translateY(-20px); /* ← adjust 20px for starting offset */
+    transform: translate(-50%, -60%) translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -80,7 +80,7 @@ body {
 @keyframes fade-in-from-bottom-small {
   0% {
     opacity: 0;
-    transform: translate(-50%, -40%) translateY(20px); /* ← adjust 20px for starting offset */
+    transform: translate(-50%, -40%) translateY(20px);
   }
   100% {
     opacity: 1;
@@ -96,7 +96,7 @@ body {
   height: 10vh;
   width: auto;
   opacity: 0;
-  animation: fade-in-from-top-small 1s ease-out 1s forwards; /* ← delay matches .center */
+  animation: fade-in-from-top-small 1s ease-out 1s forwards;
 }
 
 .headshot-bottom {
@@ -107,7 +107,7 @@ body {
   height: 8.5vh;
   width: auto;
   opacity: 0;
-  animation: fade-in-from-bottom-small 1s ease-out 1s forwards; /* ← delay matches .center */
+  animation: fade-in-from-bottom-small 1s ease-out 1s forwards;
 }
 
 /* ====== END HEADSHOT ====== */
@@ -170,7 +170,7 @@ body {
     transform: translate(-140%, -50%) translateX(0);
   }
   50% {
-    transform: translate(-140%, -50%) translateX(-8px); /* ← adjust px for float distance */
+    transform: translate(-140%, -50%) translateX(-8px);
   }
 }
 
@@ -179,18 +179,18 @@ body {
     transform: translate(40%, -50%) translateX(0);
   }
   50% {
-    transform: translate(40%, -50%) translateX(8px); /* ← adjust px for float distance */
+    transform: translate(40%, -50%) translateX(8px);
   }
 }
 
 .left {
   animation: fade-in-from-left 1s ease-out forwards,
-             float-left 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+             float-left 3s ease-in-out 1s infinite;
 }
 
 .right {
   animation: fade-in-from-right 1s ease-out forwards,
-             float-right 3s ease-in-out 1s infinite; /* ← float starts after fade-in, adjust 3s for speed */
+             float-right 3s ease-in-out 1s infinite;
 }
 
 /* ====== END SIDE IMAGE FLOAT ANIMATIONS ====== */
@@ -221,7 +221,7 @@ body {
 @keyframes fade-in-from-top {
   0% {
     opacity: 0;
-    transform: translateX(-50%) translateY(-20px); /* ← adjust 20px for how far above it starts */
+    transform: translateX(-50%) translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -352,12 +352,12 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1vw;              /* ← adjust: gap between arrows and thumbnail row */
+  gap: 1vw;
 }
 
 /* Left and right arrows */
 .showcase-arrow {
-  width: 2.5vw;            /* ← adjust: arrow width */
+  width: 2.5vw;
   height: auto;
   cursor: pointer;
   opacity: 0.6;
@@ -388,7 +388,7 @@ body {
 
 /* Thumbnail size */
 .showcase-thumb {
-  width: 7vw;         /* ← thumbnail width */
+  width: 7vw;
   height: auto;
   object-fit: cover;
 }
@@ -483,13 +483,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1vw;    /* ← adjust: gap between label images */
+  gap: 1vw;
   margin-bottom: 1vh;
 }
 
 /* Individual label image */
 .detail-label {
-  height: 5vh;    /* ← adjust: label image width */
+  height: 5vh;
   width: auto;
 }
 
@@ -497,10 +497,10 @@ body {
 .detail-successes {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;         /* ← wraps to next row after 3 items */
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 1vh 5vw;           /* ← vertical gap between rows, 10vw horizontal gap between items */
-  max-width: 30vw;         /* ← forces wrap after ~3 items at 10vw gap — adjust if needed */
+  gap: 1vh 5vw;
+  max-width: 30vw;
 }
 
 /* Single success block */
@@ -513,7 +513,7 @@ body {
 /* "My Role" label — unbolded */
 .success-label {
   font-family: 'Crimson Text', serif;
-  font-size: 15px;    /* ← adjust */
+  font-size: 15px;
   font-weight: 400;
   margin-bottom: 0.5vh;
   opacity: 50%;
@@ -522,33 +522,33 @@ body {
 /* "UI Designer" value — bolded */
 .success-value {
   font-family: 'Crimson Text', serif;
-  font-size: 15px;    /* ← adjust */
+  font-size: 15px;
   font-weight: 700;
   margin: 0;
 }
 
 .showcase-header {
   position: absolute;
-  top: 20vh;    /* ← adjust */
-  left: 10%;    /* ← adjust */
-  right: 10%;    /* ← adjust */
+  top: 20vh;
+  left: 10%;
+  right: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2vh;    /* ← adjust */
+  gap: 2vh;
 }
 
 .showcase-title {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 15px;    /* ← adjust */
-  letter-spacing: 0.40em;  /* ← 40% letter spacing */
+  font-size: 15px;
+  letter-spacing: 0.40em;
   white-space: nowrap;
 }
 
 .line-break-img {
-  height: 1vh;    /* ← adjust */
+  height: 1vh;
   width: auto;
 }
 
@@ -568,12 +568,12 @@ body {
   width: 7vw;
   height: auto;
   object-fit: cover;
-  transition: width 0.4s ease;   /* ← smooth size animation */
+  transition: width 0.4s ease;
 }
 
 /* Active thumbnail — slightly larger */
 .showcase-item.active .showcase-thumb {
-  width: 8.5vw;    /* ← adjust */
+  width: 8.5vw;
 }
 
 .work-detail {
@@ -587,7 +587,7 @@ body {
   align-items: center;
   gap: 4vw;
   opacity: 1;
-  transition: opacity 0.3s ease;  /* ← smooth fade */
+  transition: opacity 0.3s ease;
 }
 
 /* ====== WORK SECTION FADE IN ====== */
@@ -614,7 +614,7 @@ body {
 
 .about-up-arrow-link {
   position: absolute;
-  top: 13vh;             /* ← matches work-up-arrow-link top value */
+  top: 13vh;
   left: 50%;
   z-index: 200;
   display: flex;
@@ -631,14 +631,14 @@ body {
     transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(12px); /* ← bounces downward since arrow points up */
+    transform: translateX(-50%) translateY(12px);
   }
 }
 
 /* About section left/right arrows */
 .about-arrows {
   position: absolute;
-  top: 50%;    /* ← adjust: vertical position */
+  top: 50%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
@@ -646,11 +646,11 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8vw;    /* ← adjust: gap from each edge */
+  padding: 0 8vw;
 }
 
 .about-side-arrow {
-  width: 4vw;    /* ← adjust: arrow width */
+  width: 4vw;
   height: auto;
   cursor: pointer;
   opacity: 0.6;
@@ -666,7 +666,7 @@ body {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-6px); /* ← adjust: bounce distance */
+    transform: translateX(-6px);
   }
 }
 
@@ -675,7 +675,7 @@ body {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(6px); /* ← adjust: bounce distance */
+    transform: translateX(6px);
   }
 }
 
@@ -700,9 +700,9 @@ body {
 /* Detail image wrapper — clips the scrolling preview */
 .detail-image-wrapper {
   position: relative;
-  width: 32vw;             /* ← matches detail-image width */
+  width: 32vw;
   flex-shrink: 0;
-  overflow: hidden;        /* ← clips the tall preview image */
+  overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 }
@@ -749,7 +749,7 @@ body {
   flex-direction: column;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.6s ease;   /* ← adjust: slide fade speed */
+  transition: opacity 0.6s ease;
   pointer-events: none;
 }
 
@@ -761,7 +761,7 @@ body {
 /* ABOUT title row — same style as NOTABLE WORKS */
 .about-header {
   position: absolute;
-  top: 20vh;               /* ← adjust: gap below up arrow */
+  top: 20vh;
   left: 10%;
   right: 10%;
   display: flex;
@@ -782,8 +782,8 @@ body {
 /* About photo */
 .about-photo {
   position: absolute;
-  top: 26vh;               /* ← adjust: gap below ABOUT header */
-  height: 25vh;            /* ← adjust: photo height */
+  top: 26vh;
+  height: 25vh;
   width: auto;
 }
 
@@ -803,7 +803,7 @@ body {
 /* BIO label */
 .about-bio-label {
   position: absolute;
-  top: 54vh;               /* ← adjust: sits below the photo */
+  top: 54vh;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -814,7 +814,7 @@ body {
 /* Line break below BIO */
 .about-line-break {
   position: absolute;
-  top: 57vh;               /* ← adjust: sits below BIO label */
+  top: 57vh;
   left: 50%;
   transform: translateX(-50%);
   width: auto;
@@ -824,18 +824,18 @@ body {
 /* Bio text */
 .about-bio-text {
   position: absolute;
-  top: 60vh;               /* ← adjust: sits below line break */
+  top: 60vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 35vw;             /* ← adjust: text box width */
+  width: 35vw;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.03em;
-  line-height: 1.8;        /* ← adjust: line spacing */
+  line-height: 1.8;
   text-align: center;
   margin: 0;
-  white-space: pre-line;   /* ← respects the line breaks between paragraphs */
+  white-space: pre-line;
 }
 
 /* ====== TIMELINE ====== */
@@ -843,7 +843,7 @@ body {
 /* Timeline base line + title wrapper */
 .timeline-container {
   position: absolute;
-  top: 20.5vh;               /* ← adjust: vertical position of the timeline */
+  top: 20.5vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -852,7 +852,7 @@ body {
 }
 
 .timeline-line {
-  height: 1vh;             /* ← adjust: thickness of timeline line */
+  height: 1vh;
   width: auto;
 }
 
@@ -864,20 +864,20 @@ body {
   font-size: 15px;
   letter-spacing: 0.40em;
   white-space: nowrap;
-  background-color: #F2EDE9; /* ← matches page bg so it "cuts" through the line */
-  padding: 0 1.5vw;          /* ← adjust: breathing room around the text */
+  background-color: #F2EDE9;
+  padding: 0 1.5vw;
 }
 
 /* Row of hanging items — sits just below the timeline line */
 .timeline-items {
   position: absolute;
-  top: 20.4vh;               /* ← matches .timeline-container top */
+  top: 20.4vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 3vw;                /* ← adjust: horizontal gap between experiences */
+  gap: 3vw;
 }
 
 /* Each individual experience group */
@@ -885,12 +885,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* title, date, desc, CTA will stack below the image naturally */
 }
 
 /* The hanging image (pin + line + logo) */
 .timeline-img {
-  height: auto;            /* ← adjust: how long the hanging portion is */
+  height: auto;
   width: 6vw;
 }
 
@@ -899,40 +898,40 @@ body {
   font-family: 'Crimson Text', serif;
   font-weight: 700;
   font-size: 16px;
-  margin: 2vh 0 0 0;     /* ← 2vh gap above, no gap on other sides */
+  margin: 2vh 0 0 0;
   text-align: center;
 }
 
 /* Timeline role label */
 .timeline-role {
-  height: 5vh;         /* ← adjust: label height */
+  height: 5vh;
   width: auto;
-  margin-top: 2vh;     /* ← adjust: gap between date and label */
+  margin-top: 2vh;
 }
 
 /* Timeline description */
 .timeline-desc {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 200;
-  font-size: 13px;         /* ← adjust: text size */
+  font-size: 13px;
   letter-spacing: 0.02em;
-  line-height: 1.3;        /* ← adjust: line spacing */
+  line-height: 1.3;
   text-align: center;
-  max-width: 15vw;          /* ← adjust: wrapping width */
-  margin: 2vh 0 0 0;       /* ← 2vh gap above, no gap on other sides */
+  max-width: 15vw;
+  margin: 2vh 0 0 0;
 }
 
 /* Timeline image hover wrapper */
 .timeline-img-wrapper {
   position: relative;
-  width: 6vw;              /* ← matches timeline-img width */
+  width: 6vw;
   cursor: pointer;
 }
 
 .timeline-img {
   width: 6vw;
   height: auto;
-  transition: opacity 0.4s ease;  /* ← crossfade speed */
+  transition: opacity 0.4s ease;
   display: block;
 }
 

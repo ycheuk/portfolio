@@ -401,7 +401,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const startY = window.scrollY;
-                const distance = -startY;  // scroll back to 0
+                const distance = -startY;
                 const duration = 1800;
                 let startTime = null;
                 function ease(t) {
@@ -419,7 +419,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
         });
 
         // ====== ARROW NAVIGATION ======
-        // Order of projects — matches left-to-right thumbnail order
+        // Order of projects (left-to-right thumbnail)
         const workOrder = [
             'toury_thumbnail',
             'femme_thumbnail',
@@ -429,7 +429,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             'reed_college_thumbnail'
         ];
 
-        let currentIndex = 0; // ← 0 = toury, now the first item
+        let currentIndex = 0;
 
         document.querySelector('.left-arrow').addEventListener('click', () => {
             if (currentIndex > 0) {
@@ -453,12 +453,12 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     workSection.classList.add('visible');
-                    observer.unobserve(workSection); // ← stops watching after first trigger
+                    observer.unobserve(workSection);
                 }
             });
         }, {
-            threshold: 0.2,        // ← 20% of section must be visible to trigger
-            rootMargin: '0px'      // ← no extra margin, triggers exactly at viewport edge
+            threshold: 0.2,
+            rootMargin: '0px'
         });
 
         observer.observe(workSection);
@@ -545,7 +545,6 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
         let femmeScrollY = 0;
 
         detailWrapper.addEventListener('mouseenter', () => {
-            // Only activate for femme project
             if (workOrder[currentIndex] !== 'femme_thumbnail') return;
 
             document.getElementById('detail-image').style.opacity = '0';
@@ -556,7 +555,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             function scrollPreview() {
                 const maxScroll = previewImg.offsetHeight - detailWrapper.offsetHeight;
                 if (femmeScrollY < maxScroll) {
-                    femmeScrollY += 0.8;  // ← adjust: scroll speed in px per frame
+                    femmeScrollY += 0.8;
                     previewImg.style.transform = `translateY(-${femmeScrollY}px)`;
                     femmeScrollAnim = requestAnimationFrame(scrollPreview);
                 }
