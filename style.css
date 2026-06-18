@@ -697,6 +697,37 @@ body {
   animation: arrow-bounce-right 1.8s ease-in-out infinite;
 }
 
+/* Detail image wrapper — clips the scrolling preview */
+.detail-image-wrapper {
+  position: relative;
+  width: 32vw;             /* ← matches detail-image width */
+  flex-shrink: 0;
+  overflow: hidden;        /* ← clips the tall preview image */
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove shadow/radius from image itself since wrapper handles it */
+.detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Preview image — same width, tall, hidden by default */
+.detail-preview-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
 /* ====== ABOUT SLIDES ====== */
 
 .about-slides {

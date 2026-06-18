@@ -56,6 +56,12 @@
                 <div class="showcase-item" onclick="showWork('toury_thumbnail')">
                     <img src="images/toury_thumbnail.png" alt="toury_thumbnail" class="showcase-thumb" />
                 </div>
+                <div class="showcase-item" onclick="showWork('femme_thumbnail')">
+                    <img src="images/femme_thumbnail.png" alt="femme_thumbnail" class="showcase-thumb" />
+                </div>
+                <div class="showcase-item" onclick="showWork('simplisafe_thumbnail')">
+                    <img src="images/simplisafe_label.png" alt="simplisafe_thumbnail" class="showcase-thumb" />
+                </div>
                 <div class="showcase-item" onclick="showWork('brothers_buffet_thumbnail')">
                     <img src="images/brothers_buffet_thumbnail.png" alt="Brothers Buffet" class="showcase-thumb" />
                 </div>
@@ -72,7 +78,10 @@
         <img src="images/line_break.png" class="section-line-break" alt="" />
 
         <div class="work-detail" id="work-detail">
-            <img src="images/toury.png" alt="Selected work" class="detail-image" id="detail-image" />
+            <div class="detail-image-wrapper" id="detail-image-wrapper">
+                <img src="images/toury.png" alt="Selected work" class="detail-image" id="detail-image" />
+                <img src="images/femme_preview.png" alt="Femme preview" class="detail-preview-img" id="detail-preview-img" />
+            </div>
             <div class="detail-text">
                 <p class="detail-title">
                     <span id="detail-title-bold">Smart Tourism Mobile App</span>
@@ -248,6 +257,31 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                     { label: 'Research', value: 'Usability, A/B' },
                 ]
             },
+            femme_thumbnail: {
+                title: 'Women\'s Fitness Landing Page',
+                company: 'Femme',
+                image: 'images/femme.png',
+                desc: 'For Femme, I designed a landing page for a women-only fitness brand, using elegant and feminine visual design elements to strengthen brand identity, increase awareness, and encourage membership sign-ups.',
+                labels: ['images/uiux_design_label.png', 'images/conversion_design_label.png', 'images/landing_page_label.png', 'images/spec_ad_label.png'],
+                successes: [
+                    { label: 'Tools', value: 'Figma, Google Drive' },
+                    { label: 'Contribution', value: 'Solo' },
+                    { label: 'Goal', value: 'Brand Awareness' },
+                    { label: 'Industry', value: 'Health & Fitness' },
+                ]
+            },
+            simplisafe_thumbnail: {
+                title: 'Home Security Email Design',
+                company: 'SimpliSafe',
+                image: 'images/simplisafe.png',
+                desc: 'SimpliSafe is a home security company that offers DIY and professionally installed home security systems. Here, I designed a promotional email design focused on showcasing home security packages offered by SimpliSafe. By studying SimpliSafe\'s existing typography and brand guidelines, I created a marketing design that maintains brand consistency.',
+                labels: ['images/ui_design_label.png', 'images/email_design_label.png', 'images/marketing_label.png'],
+                successes: [
+                    { label: 'Tools', value: 'Figma, Google Drive' },
+                    { label: 'Medium', value: 'Email' },
+                    { label: 'Industry', value: 'Home Security' },
+                ]
+            },
             brothers_buffet_thumbnail: {
                 title: 'Local Chinese Dining Website',
                 company: 'Brother\'s Buffet',
@@ -387,7 +421,9 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
         // ====== ARROW NAVIGATION ======
         // Order of projects — matches left-to-right thumbnail order
         const workOrder = [
-            'toury_thumbnail',           // ← now first
+            'toury_thumbnail',
+            'femme_thumbnail',
+            'simplisafe_thumbnail',
             'brothers_buffet_thumbnail',
             'joshua_trees_thumbnail',
             'reed_college_thumbnail'
@@ -501,6 +537,44 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             }
         });
         // ====== END ABOUT SLIDESHOW ======
+
+        // ====== FEMME PREVIEW SCROLL ======
+        const detailWrapper = document.getElementById('detail-image-wrapper');
+        const previewImg = document.getElementById('detail-preview-img');
+        let femmeScrollAnim = null;
+        let femmeScrollY = 0;
+
+        detailWrapper.addEventListener('mouseenter', () => {
+            // Only activate for femme project
+            if (workOrder[currentIndex] !== 'femme_thumbnail') return;
+
+            document.getElementById('detail-image').style.opacity = '0';
+            previewImg.style.opacity = '1';
+            femmeScrollY = 0;
+            previewImg.style.transform = 'translateY(0)';
+
+            function scrollPreview() {
+                const maxScroll = previewImg.offsetHeight - detailWrapper.offsetHeight;
+                if (femmeScrollY < maxScroll) {
+                    femmeScrollY += 0.8;  // ← adjust: scroll speed in px per frame
+                    previewImg.style.transform = `translateY(-${femmeScrollY}px)`;
+                    femmeScrollAnim = requestAnimationFrame(scrollPreview);
+                }
+            }
+            femmeScrollAnim = requestAnimationFrame(scrollPreview);
+        });
+
+        detailWrapper.addEventListener('mouseleave', () => {
+            if (femmeScrollAnim) {
+                cancelAnimationFrame(femmeScrollAnim);
+                femmeScrollAnim = null;
+            }
+            document.getElementById('detail-image').style.opacity = '1';
+            previewImg.style.opacity = '0';
+            femmeScrollY = 0;
+            previewImg.style.transform = 'translateY(0)';
+        });
+        // ====== END FEMME PREVIEW SCROLL ======
     </script>
 </body>
 </html>
