@@ -245,7 +245,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
         // ====== END HEADSHOT CLICK SCROLLS TO WORK ======
         const workData = {
             toury_thumbnail: {
-                title: 'Smart Tourism Mobile App',
+                title: 'Smart Tourism Mobile App Design',
                 company: 'TouryAI',
                 image: 'images/toury.png',
                 preview: 'images/toury_preview.jpg',
@@ -259,7 +259,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                 ]
             },
             femme_thumbnail: {
-                title: 'Women\'s Fitness Landing Page',
+                title: 'Women\'s Fitness Landing Page Design',
                 company: 'Femme',
                 image: 'images/femme.png',
                 preview: 'images/femme_preview.png',
@@ -288,7 +288,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                 title: 'Local Chinese Dining Website',
                 company: 'Brother\'s Buffet',
                 image: 'images/brothers_buffet.png',
-                preview: 'images/femme_preview.png',
+                preview: 'images/brothers_buffet_preview.png',
                 desc: 'Brother\'s Buffet is a family-owned American-Chinese buffet restaurant. This website serves as a digital extension of the restaurant, showcasing its menu, business hours, address, pricing, and photo gallery to attract new customers and simplify communication.',
                 labels: ['images/ui_design_label.png', 'images/web_development_label.png', 'images/restaurant_website_label.png', 'images/small_business_label.png'],  // ← comma here
                 successes: [
@@ -312,7 +312,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                 ]
             },
             reed_college_thumbnail: {
-                title: 'Student Government UI Design',
+                title: 'Student Government Website',
                 company: 'Reed College',
                 image: 'images/reed_college.png',
                 preview: 'images/reed_college_preview.png',
@@ -522,11 +522,18 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
 
         // ====== ABOUT SLIDESHOW ======
         const aboutSlides = document.querySelectorAll('.about-slide');
+        showAboutSlide(0);
         let aboutIndex = 0;
 
         function showAboutSlide(index) {
             aboutSlides.forEach(slide => slide.classList.remove('active-slide'));
             aboutSlides[index].classList.add('active-slide');
+
+            const leftArrow = document.getElementById('about-left-arrow');
+            const rightArrow = document.getElementById('about-right-arrow');
+
+            leftArrow.style.visibility = (index === 0) ? 'hidden' : 'visible';
+            rightArrow.style.visibility = (index === aboutSlides.length - 1) ? 'hidden' : 'visible';
         }
 
         document.getElementById('about-left-arrow').addEventListener('click', () => {
