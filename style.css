@@ -1011,7 +1011,7 @@ body {
 
 .page-title {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.40em;
   white-space: nowrap;
@@ -1097,7 +1097,7 @@ body {
 /* main header */
 .page-overview-header {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.40em;
   text-align: center;
@@ -1108,7 +1108,7 @@ body {
 /* main header */
 .page-section-header {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.40em;
   text-align: center;
@@ -1220,7 +1220,7 @@ body {
 
 .page-section-subheader {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.3em;
   margin: 5vh 0 0 0;
