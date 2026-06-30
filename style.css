@@ -1,3 +1,18 @@
+/* * {
+  cursor: url('images/mouse_cursor.png'), auto;
+}
+
+a, button, [onclick], .clickable,
+.showcase-item,
+.headshot-wrapper,
+.timeline-img-wrapper,
+.detail-image-wrapper,
+.detail-image-wrapper img,
+.about-side-arrow,
+.showcase-arrow {
+  cursor: url('images/mouse_hover.png'), pointer !important;
+} */
+
 body {
     margin: 0;
     padding: 0;
@@ -513,7 +528,7 @@ body {
 /* "My Role" label — unbolded */
 .success-label {
   font-family: 'Crimson Text', serif;
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 400;
   margin-bottom: 0.5vh;
   opacity: 50%;
@@ -726,6 +741,26 @@ body {
   height: auto;
   opacity: 0;
   transition: opacity 0.4s ease;
+}
+
+.detail-image-outer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.detail-image-wrapper {
+  position: relative;
+  width: 32vw;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.detail-image-wrapper:hover {
+  transform: scale(1.05);
 }
 
 /* ====== ABOUT SLIDES ====== */
@@ -959,3 +994,206 @@ body {
 /* ====== END ABOUT SLIDES ====== */
 
 /* ====== END ABOUT SECTION ====== */
+
+/* ====== GENERIC PAGE TITLE ====== */
+
+.page-header {
+  position: absolute;
+  top: 15vh;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+}
+
+.page-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.40em;
+  white-space: nowrap;
+}
+
+/* ====== GENERIC PROJECT PAGE CONTENT ====== */
+
+.page-content {
+  position: absolute;
+  top: 19vh;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 105vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Short description */
+.page-desc {
+  font-family: 'Josefin Sans', serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 0 2vh 0;
+  opacity: 0.85;
+}
+
+/* Main project image */
+.page-main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Labels row */
+.page-labels {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3vh;
+}
+
+.page-label-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2vh;
+}
+
+/* Label title */
+.page-label-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 10px;
+  font-weight: 400;
+  margin: 0;
+  opacity: 50%;
+  text-align: center;
+}
+
+/* Label value */
+.page-label-value {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+/* Line break below labels */
+.page-line-break {
+  width: auto;
+  height: 1vh;
+  margin-top: 3vh;
+}
+
+/* ====== PROJECT PAGE OVERVIEW & CONFIDENTIAL ====== */
+
+/* OVERVIEW header */
+.page-section-header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.40em;
+  text-align: center;
+  margin: 3vh 0 0 0;
+  width: 100%;
+}
+
+/* Overview description text */
+.page-overview-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+  text-align: center;
+  width: 100%;
+  margin: 2vh 0 0 0;
+}
+
+/* Confidential box */
+.confidential-box {
+  width: 70%;
+  height: 7vh;
+  margin-top: 3vh;
+  background-color: rgba(168, 147, 127, 0.2);
+  border: 0.5px solid #4A4239;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;       /* gap between lock and text */
+}
+
+/* Lock icon */
+.confidential-lock {
+  height: 3vh;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* Confidential text */
+.confidential-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 0;
+}
+
+/* Other works box */
+.other-works-box {
+  width: 30%;
+  height: 5vh;
+  margin: 3vh 0 3vh 0;
+  background-color: rgba(168, 147, 127, 0.2);
+  border: 0.5px solid #4A4239;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.other-works-box:hover {
+  background-color: rgba(168, 147, 127, 0.4);
+}
+
+/* ====== PROJECT PAGE NAV — not fixed, stays at top ====== */
+.project-page .header-nav {
+  position: absolute;
+}
+
+/* ====== PAGE FADE TRANSITION ====== */
+body {
+  animation: page-fade-in 0.5s ease forwards;
+}
+
+@keyframes page-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Other works text */
+.other-works-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 0;
+}
+
+/* ====== END PROJECT PAGE OVERVIEW & CONFIDENTIAL ====== */
+
+/* ====== END GENERIC PROJECT PAGE CONTENT ====== */
+
+/* ====== END GENERIC PAGE TITLE ====== */

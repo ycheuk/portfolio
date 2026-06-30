@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toury | Yik Yin Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top" class="project-page">
+    <nav class="header-nav">
+        <img src="images/header_bar.png" alt="Header" class="header-bar" />
+        <div class="nav-items">
+            <img src="images/heart_symbol.png" alt="Heart" class="heart-icon" />
+            <a href="index.html#work" class="nav-link">WORK</a>
+            <a href="index.html#about" class="nav-link">ABOUT</a>
+        </div>
+        <div class="nav-items-right">
+            <a href="https://www.linkedin.com/in/ycheuk/" target="_blank" class="nav-link">LINKEDIN</a>
+            <a href="https://www.behance.net/ycheuk" target="_blank" class="nav-link">BEHANCE</a>
+        </div>
+    </nav>
+
+    <!-- ====== PAGE TITLE ROW ====== -->
+    <div class="page-header">
+        <img src="images/line_break_left.png" class="line-break-img" alt="" />
+        <span class="page-title">TOURY</span>
+        <img src="images/line_break_right.png" class="line-break-img" alt="" />
+    </div>
+    <!-- ====== END PAGE TITLE ROW ====== -->
+
+    <!-- ====== PAGE CONTENT WRAPPER (max-width: 75vh) ====== -->
+    <div class="page-content">
+
+        <!-- Short description -->
+        <p class="page-desc">A smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal.</p>
+
+        <!-- Main project image -->
+        <img src="images/toury-1.png" alt="Toury" class="page-main-image" />
+
+        <!-- Labels row -->
+        <div class="page-labels">
+            <div class="page-label-item">
+                <p class="page-label-title">ROLE</p>
+                <p class="page-label-value">UI/UX Designer</p>
+            </div>
+            <div class="page-label-item">
+                <p class="page-label-title">TIMELINE</p>
+                <p class="page-label-value">Summer 2025 (3 months)</p>
+            </div>
+            <div class="page-label-item">
+                <p class="page-label-title">TOOLS</p>
+                <p class="page-label-value">Figma</p>
+                <p class="page-label-value">Jira</p>
+            </div>
+            <div class="page-label-item">
+                <p class="page-label-title">SKILLS</p>
+                <p class="page-label-value">Mobile Design</p>
+                <p class="page-label-value">AI Integration</p>
+            </div>
+        </div>
+
+        <!-- Line break -->
+        <img src="images/line_break.png" class="page-line-break" alt="" />
+
+        <!-- OVERVIEW -->
+        <p class="page-section-header">OVERVIEW</p>
+
+        <p class="page-overview-text">In the summer of 2025, I was given the opportunity to work at TouryAI as a contracted UI/UX Designer.<br><br>TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal. TouryAI’s mission is to make travel smarter, more engaging, and deeply personal, empowering explorers everywhere to see the world with fresh eyes.<br><br> As a UI/UX designer at TouryAI, I made over 30+ wireframes, 20+ screens, and 10+ prototypes.</p>
+
+        <!-- Confidential box -->
+        <div class="confidential-box">
+            <img src="images/lock.png" alt="Lock" class="confidential-lock" />
+            <p class="confidential-text">This work is confidential! Please <strong><u><a href="mailto:ycheuk03@gmail.com">email me</a></u></strong> if you'd like to chat!</p>
+        </div>
+
+        <img src="images/line_break.png" class="page-line-break" alt="" />
+
+        <div class="other-works-box">
+            <p class="other-works-text">See my other works!</p>
+        </div>
+
+    </div>
+    <!-- ====== END PAGE CONTENT WRAPPER ====== -->
+
+</body>
+<script>
+    // ====== SMOOTH PAGE TRANSITIONS ======
+    function smoothNavigate(url) {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            window.location.href = url;
+        }, 500);  // ← matches transition duration
+    }
+
+    // Other works box
+    document.querySelector('.other-works-box').addEventListener('click', () => {
+        smoothNavigate('index.html#work');
+    });
+
+    // Nav links — intercept all except external links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                smoothNavigate(href);
+            });
+        }
+    });
+    // ====== END SMOOTH PAGE TRANSITIONS ======
+</script>
+</html>
