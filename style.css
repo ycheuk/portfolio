@@ -1047,6 +1047,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
 }
 
 /* Labels row */
@@ -1087,21 +1088,33 @@ body {
 /* Line break below labels */
 .page-line-break {
   width: auto;
-  height: 1vh;
+  height: 1.3vh;
   margin-top: 3vh;
 }
 
 /* ====== PROJECT PAGE OVERVIEW & CONFIDENTIAL ====== */
 
-/* OVERVIEW header */
+/* main header */
+.page-overview-header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.40em;
+  text-align: center;
+  margin-bottom: 0vh;
+  /* width: 100%; */
+}
+
+/* main header */
 .page-section-header {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0.40em;
   text-align: center;
-  margin: 3vh 0 0 0;
-  width: 100%;
+  margin: 0;
+  /* margin: 3vh 0 0 0; */
+  /* width: 100%; */
 }
 
 /* Overview description text */
@@ -1191,6 +1204,100 @@ body {
   text-align: center;
   margin: 0;
 }
+
+/* ====== PROJECT PAGE SECTIONS ====== */
+
+/* Section number e.g. "01." */
+.page-section-number {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  margin: 5vh 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+.page-section-subheader {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 0.3em;
+  margin: 5vh 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Section title row with line breaks — same as showcase-header */
+.page-section-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+/* Two column layout */
+.page-two-col {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4%;             /* ← gap between text and image (100% - 48% - 48% = 4%) */
+  margin-top: 3vh;
+}
+
+/* Left text column */
+.page-two-col-text {
+  width: 48%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+  text-align: right;   /* ← right-aligned as requested */
+  margin: 0;
+}
+
+/* Right image column */
+.page-two-col-image {
+  width: 48%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Center project image */
+.page-center-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
+/* Center project image (70%)*/
+.page-center-image-70 {
+  width: 70%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
+/* Center project image (90%)*/
+.page-center-image-90 {
+  width: 90%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
+/* ====== END PROJECT PAGE SECTIONS ====== */
 
 /* ====== END PROJECT PAGE OVERVIEW & CONFIDENTIAL ====== */
 

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body id="top" class="project-page">
     <nav class="header-nav">
         <img src="images/header_bar.png" alt="Header" class="header-bar" />
         <div class="nav-items">
@@ -64,8 +64,106 @@
         <!-- Line break -->
         <img src="images/line_break.png" class="page-line-break" alt="" />
 
+        <p class="page-overview-header">OVERVIEW</p>
+
+        <p class="page-overview-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.<br><br> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et.</p>
+
+        <!-- 01. section number -->
+        <p class="page-section-number">01.</p>
+
+        <!-- OBJECTIVE header with line breaks -->
+        <div class="page-section-title-row">
+            <img src="images/line_break_left.png" class="line-break-img" alt="" />
+            <span class="page-section-header">OBJECTIVE</span>
+            <img src="images/line_break_right.png" class="line-break-img" alt="" />
+        </div>
+
+        <!-- Two column: text left, image right -->
+        <div class="page-two-col">
+            <p class="page-two-col-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.<br><br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
+            <img src="images/femme-2.png" alt="Femme" class="page-two-col-image" />
+        </div>
+
+        <p class="page-section-number">02.</p>
+
+        <div class="page-section-title-row">
+            <img src="images/line_break_left.png" class="line-break-img" alt="" />
+            <span class="page-section-header">CREATIVE DIRECTION</span>
+            <img src="images/line_break_right.png" class="line-break-img" alt="" />
+        </div>
+
+        <img src="images/femme-3.png" alt="Femme" class="page-center-image" />
+
+        <p class="page-overview-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+
+        <p class="page-section-number">03.</p>
+
+        <div class="page-section-title-row">
+            <img src="images/line_break_left.png" class="line-break-img" alt="" />
+            <span class="page-section-header">DESIGN SYSTEM</span>
+            <img src="images/line_break_right.png" class="line-break-img" alt="" />
+        </div>
+
+        <p class="page-section-subheader">Branding</p>
+
+        <img src="images/femme-4.png" alt="Femme" class="page-center-image-70" />
+
+        <p class="page-overview-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+
+        <p class="page-section-subheader">Components</p>
+
+        <img src="images/femme-5.png" alt="Femme" class="page-center-image-90" />
+
+        <p class="page-overview-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+
+        <p class="page-section-number">04.</p>
+
+        <div class="page-section-title-row">
+            <img src="images/line_break_left.png" class="line-break-img" alt="" />
+            <span class="page-section-header">TAKEAWAYS</span>
+            <img src="images/line_break_right.png" class="line-break-img" alt="" />
+        </div>
+
+        <p class="page-overview-text">1. Cum sociis natoque.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, quam ac convallis vulputate, nulla felis aliquet tellus, vitae vestibulum erat tortor non nulla. Donec dapibus libero quis tellus congue, eu rutrum erat sollicitudin. Cras ac lectus ac felis accumsan rhoncus. Sed euismod ipsum diam. Donec lacinia sit amet mauris eget venenatis. Suspendisse interdum tempus volutpat. Suspendisse a eros nisi.</p>
+
+        <p class="page-overview-text">2. Cum sociis natoque.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum, quam ac convallis vulputate, nulla felis aliquet tellus, vitae vestibulum erat tortor non nulla. Donec dapibus libero quis tellus congue, eu rutrum erat sollicitudin. Cras ac lectus ac felis accumsan rhoncus. Sed euismod ipsum diam. Donec lacinia sit amet mauris eget venenatis. Suspendisse interdum tempus volutpat. Suspendisse a eros nisi.</p>
+
+        <img src="images/line_break.png" class="page-line-break" alt="" />
+
+        <div class="other-works-box">
+            <p class="other-works-text">See my other works!</p>
+        </div>
+
     </div>
     <!-- ====== END PAGE CONTENT WRAPPER ====== -->
 
 </body>
+
+<script>
+    // ====== SMOOTH PAGE TRANSITIONS ======
+    function smoothNavigate(url) {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            window.location.href = url;
+        }, 500);  // ← matches transition duration
+    }
+
+    // Other works box
+    document.querySelector('.other-works-box').addEventListener('click', () => {
+        smoothNavigate('index.html#work');
+    });
+
+    // Nav links — intercept all except external links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                smoothNavigate(href);
+            });
+        }
+    });
+    // ====== END SMOOTH PAGE TRANSITIONS ======
+</script>
 </html>
