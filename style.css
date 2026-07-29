@@ -865,8 +865,7 @@ body {
   width: 35vw;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 12px;
-  letter-spacing: 0.03em;
+  font-size: 14px;
   line-height: 1.8;
   text-align: center;
   margin: 0;
@@ -1279,9 +1278,26 @@ body {
   margin-top: 3vh;
 }
 
+/* Center project image (50%)*/
+.page-center-image-50 {
+  width: 50%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
 /* Center project image (70%)*/
 .page-center-image-70 {
   width: 70%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
+.page-center-image-80 {
+  width: 80%;
   height: auto;
   display: block;
   border-radius: 10px;
