@@ -1257,7 +1257,18 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
   line-height: 1.8;
-  text-align: right;   /* ← right-aligned as requested */
+  text-align: right;
+  margin: 0;
+}
+
+/* Right text column */
+.page-right-col-text {
+  width: 48%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
   margin: 0;
 }
 
