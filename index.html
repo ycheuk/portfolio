@@ -18,8 +18,8 @@
             <a href="#about" class="nav-link">ABOUT</a>
         </div>
         <div class="nav-items-right">
-            <a href="https://www.linkedin.com/in/ycheuk/" target="_blank" class="nav-link">LINKEDIN</a>
-            <a href="https://www.behance.net/ycheuk" target="_blank" class="nav-link">BEHANCE</a>
+            <a href="#contact" target="_blank" class="nav-link">CONTACT</a>
+            <!-- <a href="https://www.behance.net/ycheuk" target="_blank" class="nav-link">BEHANCE</a> -->
         </div>
     </nav>
 
@@ -216,6 +216,24 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             <img src="images/right_arrow.png" class="about-side-arrow" alt="Next" id="about-right-arrow" />
         </div>
 
+        <!-- update work section down arrow to point to #about -->
+        <a href="#contact" class="work-down-arrow-link">
+            <img src="images/down_arrow.png" alt="Scroll down" class="work-down-arrow" />
+        </a>
+
+    </section>
+
+    <!-- ====== CONTACT SECTION ====== -->
+    <section id="contact" class="contact-section">
+        <a href="#about" class="contact-up-arrow-link">
+            <img src="images/up_arrow.png" alt="Scroll up" class="about-up-arrow" />
+        </a>
+
+        <div class="about-header">
+            <img src="images/line_break_left.png" class="line-break-img" alt="" />
+            <span class="about-title">CONTACT</span>
+            <img src="images/line_break_right.png" class="line-break-img" alt="" />
+        </div>
     </section>
     <!-- ====== END ABOUT SECTION ====== -->
 
@@ -249,7 +267,7 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                 preview: 'images/toury_preview.jpg',
                 link: 'toury.html',
                 desc: 'TouryAI is a smart tourism mobile app designed to make travel smarter, more engaging, and deeply personal. TouryAI\'s mission is to make travel smarter, more engaging, and deeply personal, empowering explorers everywhere to see the world with fresh eyes.',
-                labels: ['images/uiux_design_label.png', 'images/b2c_label.png', 'images/mobile_app_design_label.png', 'images/tourism_label.png'],  // ← comma here
+                labels: ['images/uiux_design_label.png', 'images/product_design_label.png', 'images/b2c_label.png', 'images/mobile_app_design_label.png', 'images/tourism_label.png'],  // ← comma here
                 successes: [
                     { label: 'TOOLS', value: 'Figma, Jira' },
                     { label: 'CONTRIBUTION', value: 'Team' },
@@ -577,6 +595,31 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             previewImg.style.transform = 'translateY(0)';
         });
         // ====== END PREVIEW SCROLL ON HOVER ======
+
+        // ====== SMOOTH SCROLL TO #contact ======
+        document.querySelectorAll('a[href="#contact"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.getElementById('contact');
+                const targetY = target.getBoundingClientRect().top + window.scrollY;
+                const startY = window.scrollY;
+                const distance = targetY - startY;
+                const duration = 1800;
+                let startTime = null;
+                function ease(t) {
+                    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                }
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    window.scrollTo(0, startY + distance * ease(progress));
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        });
+// ====== END SMOOTH SCROLL TO #contact ======
     </script>
 </body>
 </html>
