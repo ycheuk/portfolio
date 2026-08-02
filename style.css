@@ -1030,7 +1030,32 @@ body {
   font-weight: 200;
   font-size: 14px;
   line-height: 1.8;
-  margin-top: 5vh;
+  margin-top: 2vh;
+}
+
+.contact-email-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 10vh;
+  margin-bottom: 0vh;
+}
+
+.contact-email {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 0vh;
+}
+
+.contact-links-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 0vh;
 }
 
 /* Center dividing line */

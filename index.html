@@ -237,22 +237,25 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
         </div>
 
         <!-- ====== CONTACT LAYOUT ====== -->
-        <form
-          action="https://formspree.io/f/mvzeezzo"
-          method="POST"
-        >
-            <div class="contact-layout">
+        <div class="contact-layout">
 
-                <!-- LEFT: contact info -->
-                <div class="contact-left">
-                    <p class="contact-header">GOT A PROJECT IN MIND?<br>LET’S CHAT!</p>
-                    <p class="contact-description">Send me an email, connect with me through social media, or just fill out this contact form!<br><br>Looking forward to creating something extraordinary together!!</p>
-                </div>
+            <!-- LEFT: contact info -->
+            <div class="contact-left">
+                <p class="contact-header">GOT A PROJECT IN MIND?<br>LET’S CHAT!</p>
+                <p class="contact-description">Send me an email, connect with me through social media, or just fill out this contact form!<br><br>Looking forward to creating something extraordinary together!!</p>
+                <p class="contact-email-label">EMAIL</p>
+                <p class="contact-email">ycheuk03@gmail.com</p>
+                <!-- <p class="contact-links-label">SOCIAL</p> -->
+            </div>
 
-                <!-- CENTER DIVIDER -->
-                <div class="contact-divider"></div>
+            <!-- CENTER DIVIDER -->
+            <div class="contact-divider"></div>
 
-                <!-- RIGHT: contact form -->
+            <!-- RIGHT: contact form -->
+            <form
+              action="https://formspree.io/f/mvzeezzo"
+              method="POST"
+            >
                 <div class="contact-right">
                     <input type="text" name="name" class="contact-input" placeholder="NAME" />
                     <input type="text" name="subject" class="contact-input" placeholder="SUBJECT" />
@@ -260,9 +263,9 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                     <textarea name="message" class="contact-input contact-textarea" placeholder="MESSAGE"></textarea>
                     <button type="submit" class="contact-submit">SUBMIT</button>
                 </div>
+            </form>
 
-            </div>
-        </form>
+        </div>
         <!-- ====== END CONTACT LAYOUT ====== -->
 
     </section>
