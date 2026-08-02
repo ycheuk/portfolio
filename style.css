@@ -994,6 +994,116 @@ body {
 
 /* ====== END ABOUT SECTION ====== */
 
+/* ====== CONTACT SECTION ====== */
+
+.contact-layout {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+/* Left info panel */
+.contact-left {
+  width: 25vw;
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  margin: 0;
+}
+
+.contact-description {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 5vh;
+}
+
+/* Center dividing line */
+.contact-divider {
+  width: 0.5px;
+  height: 50vh;
+  background-color: #4A4239;
+  flex-shrink: 0;
+}
+
+/* Right form panel */
+.contact-right {
+  width: 25vw;
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+/* Input boxes */
+.contact-input {
+  width: 100%;
+  height: 5vh;
+  border: 0.5px solid #4A4239;
+  border-radius: 0;
+  background: transparent;
+  padding: 0 1.5vw;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #4A4239;
+  outline: none;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.contact-input::placeholder {
+  color: rgba(74, 66, 57, 0.50);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* Message textarea — taller */
+.contact-textarea {
+  height: 20vh;
+  padding-top: 1.5vh;
+}
+
+/* Submit button */
+.contact-submit {
+  width: 100%;
+  height: 5vh;
+  background-color: #A8937F;
+  border: none;
+  border-radius: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.contact-submit:hover {
+  opacity: 0.8;
+}
+
+/* ====== END CONTACT SECTION ====== */
+
 /* ====== GENERIC PAGE TITLE ====== */
 
 .page-header {

@@ -6,6 +6,7 @@
     <title>Yik Yin | Portfolio</title>
     <link rel="icon" type="image/png" href="images/logo.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -234,7 +235,38 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
             <span class="about-title">CONTACT</span>
             <img src="images/line_break_right.png" class="line-break-img" alt="" />
         </div>
+
+        <!-- ====== CONTACT LAYOUT ====== -->
+        <form
+          action="https://formspree.io/f/mvzeezzo"
+          method="POST"
+        >
+            <div class="contact-layout">
+
+                <!-- LEFT: contact info -->
+                <div class="contact-left">
+                    <p class="contact-header">GOT A PROJECT IN MIND?<br>LET’S CHAT!</p>
+                    <p class="contact-description">Send me an email, connect with me through social media, or just fill out this contact form!<br><br>Looking forward to creating something extraordinary together!!</p>
+                </div>
+
+                <!-- CENTER DIVIDER -->
+                <div class="contact-divider"></div>
+
+                <!-- RIGHT: contact form -->
+                <div class="contact-right">
+                    <input type="text" name="name" class="contact-input" placeholder="NAME" />
+                    <input type="text" name="subject" class="contact-input" placeholder="SUBJECT" />
+                    <input type="email" name="email "class="contact-input" placeholder="EMAIL" />
+                    <textarea name="message" class="contact-input contact-textarea" placeholder="MESSAGE"></textarea>
+                    <button type="submit" class="contact-submit">SUBMIT</button>
+                </div>
+
+            </div>
+        </form>
+        <!-- ====== END CONTACT LAYOUT ====== -->
+
     </section>
+    <!-- ====== END CONTACT SECTION ====== -->
     <!-- ====== END ABOUT SECTION ====== -->
 
     <script>
