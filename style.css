@@ -1487,3 +1487,343 @@ body {
 /* ====== END GENERIC PROJECT PAGE CONTENT ====== */
 
 /* ====== END GENERIC PAGE TITLE ====== */
+
+/* ============================================================
+   ====== MOBILE RESPONSIVE OVERRIDES (added) ======
+   Everything above was built with vw/vh + absolute positioning
+   for a wide desktop viewport. These overrides restructure the
+   layout for phones/tablets: two-column sections stack, fixed
+   side art is hidden or shrunk, and long horizontal rows (the
+   timeline, the showcase strip) scroll instead of overflowing.
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  /* ---- Nav bar ---- */
+  .header-nav {
+    top: 3vh;
+    max-width: 94vw;
+  }
+
+  .header-bar {
+    width: 92vw;
+    max-width: none;
+  }
+
+  .nav-items,
+  .nav-items-right {
+    gap: 4vw;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  /* ---- Hero / headshot ---- */
+  .headshot-wrapper,
+  .headshot-default,
+  .headshot-hover {
+    height: 30vh;
+  }
+
+  .headshot-top {
+    height: 7vh;
+  }
+
+  .headshot-bottom {
+    height: 6vh;
+  }
+
+  /* Decorative side illustrations collide with the headshot on
+     narrow screens (their transform math assumes a wide viewport),
+     so shrink and move them out of the way instead of hiding them. */
+  .side {
+    height: 12vh;
+    opacity: 0.85;
+  }
+
+  .left {
+    left: 6vw;
+    transform: translate(0, -110%);
+  }
+
+  .right {
+    left: auto;
+    right: 6vw;
+    transform: translate(0, -110%);
+  }
+
+  @keyframes fade-in-from-left {
+    0% { opacity: 0; transform: translate(0, -110%) translateY(-20px); }
+    100% { opacity: 0.85; transform: translate(0, -110%) translateY(0); }
+  }
+
+  @keyframes fade-in-from-right {
+    0% { opacity: 0; transform: translate(0, -110%) translateY(-20px); }
+    100% { opacity: 0.85; transform: translate(0, -110%) translateY(0); }
+  }
+
+  @keyframes float-left {
+    0%, 100% { transform: translate(0, -110%) translateX(0); }
+    50% { transform: translate(0, -110%) translateX(-6px); }
+  }
+
+  @keyframes float-right {
+    0%, 100% { transform: translate(0, -110%) translateX(0); }
+    50% { transform: translate(0, -110%) translateX(6px); }
+  }
+
+  /* ---- Work section ---- */
+  .showcase-header,
+  .about-header {
+    top: 12vh;
+    gap: 2vh;
+  }
+
+  .showcase-title,
+  .about-title {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+  }
+
+  .showcase-wrapper {
+    top: 17vh;
+    left: 4%;
+    right: 4%;
+    gap: 2vw;
+  }
+
+  .showcase {
+    overflow-x: auto;
+    max-width: 80vw;
+    gap: 4vw;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .showcase::-webkit-scrollbar {
+    display: none;
+  }
+
+  .showcase-thumb {
+    width: 16vw;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  .showcase-item.active .showcase-thumb {
+    width: 18vw;
+    min-width: 66px;
+  }
+
+  .showcase-arrow {
+    width: 6vw;
+    flex-shrink: 0;
+  }
+
+  .section-line-break {
+    top: 27vh;
+  }
+
+  /* Work detail: stack image above text instead of side-by-side */
+  .work-detail {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin-top: 30vh;
+    padding: 0 6vw 6vh 6vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3vh;
+    height: auto;
+  }
+
+  .detail-image-wrapper {
+    width: 100%;
+  }
+
+  .detail-title {
+    font-size: 19px;
+  }
+
+  .detail-desc {
+    font-size: 14px;
+  }
+
+  .detail-successes {
+    max-width: 100%;
+    gap: 1.5vh 6vw;
+  }
+
+  .work-down-arrow-link {
+    display: none;
+  }
+
+  .work-up-arrow-link {
+    top: 5vh;
+  }
+
+  .work-section {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 6vh;
+  }
+
+  /* ---- About: bio slide ---- */
+  .about-photo {
+    top: 20vh;
+    height: 16vh;
+  }
+
+  .about-bio-label {
+    top: 39vh;
+  }
+
+  .about-line-break {
+    top: 42vh;
+  }
+
+  .about-bio-text {
+    top: 45vh;
+    width: 86vw;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ---- About: timeline slide ---- */
+  .about-section {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .timeline-container {
+    top: 12vh;
+  }
+
+  .timeline-items {
+    position: relative;
+    top: 15vh;
+    left: 0;
+    transform: none;
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 6vw 6vh 6vw;
+    gap: 8vw;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .timeline-item {
+    flex-shrink: 0;
+    width: 60vw;
+  }
+
+  .timeline-img,
+  .timeline-img-wrapper {
+    width: 30vw;
+  }
+
+  .timeline-desc {
+    max-width: 55vw;
+    font-size: 12px;
+  }
+
+  .about-arrows {
+    display: none;
+  }
+
+  /* ---- Contact section ---- */
+  .contact-section {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 6vh;
+  }
+
+  .contact-layout {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 16vh;
+    padding: 0 6vw;
+    gap: 4vh;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-divider {
+    width: 100%;
+    height: 0.5px;
+  }
+
+  .contact-header {
+    font-size: 15px;
+  }
+
+  /* ---- Project sub-pages ---- */
+  .page-content {
+    padding: 0 6vw;
+    box-sizing: border-box;
+  }
+
+  .page-two-col {
+    flex-direction: column;
+    gap: 3vh;
+  }
+
+  .page-two-col-text,
+  .page-right-col-text,
+  .page-two-col-image {
+    width: 100%;
+    text-align: left;
+  }
+
+  .page-labels {
+    flex-wrap: wrap;
+    gap: 3vh 6vw;
+    justify-content: flex-start;
+  }
+
+  .confidential-box,
+  .other-works-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .headshot-wrapper,
+  .headshot-default,
+  .headshot-hover {
+    height: 24vh;
+  }
+
+  .detail-title {
+    font-size: 17px;
+  }
+
+  .timeline-item {
+    width: 72vw;
+  }
+
+  .timeline-img,
+  .timeline-img-wrapper {
+    width: 34vw;
+  }
+
+  .timeline-desc {
+    max-width: 65vw;
+  }
+
+  .about-bio-text {
+    width: 90vw;
+    font-size: 12.5px;
+  }
+}
