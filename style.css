@@ -1514,16 +1514,16 @@ body {
 .rotate-overlay-content p {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 66px;
     letter-spacing: 0.05em;
     color: #4A4239;
-    max-width: 80vw;
+    max-width: 85vw;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .rotate-icon {
-    font-size: 72px;
+    font-size: 100px;
     margin-bottom: 4vh;
     animation: rotate-hint 1.6s ease-in-out infinite;
 }
