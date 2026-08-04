@@ -1522,7 +1522,7 @@ body {
 }
 
 .rotate-icon {
-    font-size: 40px;
+    font-size: 80px;
     margin-bottom: 3vh;
     animation: rotate-hint 1.6s ease-in-out infinite;
 }
