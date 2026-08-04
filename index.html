@@ -14,7 +14,7 @@
     <div id="rotate-overlay" class="rotate-overlay">
         <div class="rotate-overlay-content">
             <div class="rotate-icon">📱</div>
-            <p>For the best experience, please flip your phone to portrait mode.</p>
+            <p>For the best experience, please flip your phone to landscape mode.</p>
         </div>
     </div>
     <nav class="header-nav">
@@ -301,9 +301,9 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
                     return;
                 }
 
-                const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+                const isPortrait = window.matchMedia('(orientation: portrait)').matches;
 
-                if (isLandscape) {
+                if (isPortrait) {
                     overlay.classList.add('visible');
                     document.body.style.overflow = 'hidden';
                     requestAnimationFrame(() => overlay.classList.add('fade-in'));
