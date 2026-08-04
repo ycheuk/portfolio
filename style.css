@@ -1487,3 +1487,47 @@ body {
 /* ====== END GENERIC PROJECT PAGE CONTENT ====== */
 
 /* ====== END GENERIC PAGE TITLE ====== */
+
+.rotate-overlay {
+    position: fixed;
+    inset: 0;
+    background: #F2EDE9;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 8vw;
+    box-sizing: border-box;
+}
+
+.rotate-overlay.visible {
+    display: flex;
+}
+
+.rotate-overlay.fade-in {
+    opacity: 1;
+}
+
+.rotate-overlay-content p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: #4A4239;
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+.rotate-icon {
+    font-size: 40px;
+    margin-bottom: 3vh;
+    animation: rotate-hint 1.6s ease-in-out infinite;
+}
+
+@keyframes rotate-hint {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(90deg); }
+}

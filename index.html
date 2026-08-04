@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
+    <div id="rotate-overlay" class="rotate-overlay">
+        <div class="rotate-overlay-content">
+            <div class="rotate-icon">📱</div>
+            <p>For the best experience, please flip your phone to portrait mode.</p>
+        </div>
+    </div>
     <nav class="header-nav">
         <img src="images/header_bar.png" alt="Header" class="header-bar" />
         <div class="nav-items">
@@ -281,6 +287,37 @@ Outside of design, I'm constantly inspired by interactive experiences, digital s
     <!-- ====== END ABOUT SECTION ====== -->
 
     <script>
+        (function () {
+            const overlay = document.getElementById('rotate-overlay');
+
+            function isTouchDevice() {
+                return window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+            }
+
+            function checkOrientation() {
+                if (!isTouchDevice()) {
+                    overlay.classList.remove('visible', 'fade-in');
+                    document.body.style.overflow = '';
+                    return;
+                }
+
+                const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+
+                if (isLandscape) {
+                    overlay.classList.add('visible');
+                    document.body.style.overflow = 'hidden';
+                    requestAnimationFrame(() => overlay.classList.add('fade-in'));
+                } else {
+                    overlay.classList.remove('fade-in');
+                    document.body.style.overflow = '';
+                    setTimeout(() => overlay.classList.remove('visible'), 500); // matches the CSS transition time
+                }
+            }
+
+            window.addEventListener('resize', checkOrientation);
+            window.addEventListener('orientationchange', checkOrientation);
+            document.addEventListener('DOMContentLoaded', checkOrientation);
+        })();
         // ====== HEADSHOT CLICK SCROLLS TO WORK ======
         document.getElementById('headshot-wrapper').addEventListener('click', () => {
         const target = document.getElementById('work');
